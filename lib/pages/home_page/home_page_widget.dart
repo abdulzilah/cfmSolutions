@@ -1,4 +1,6 @@
 import 'package:cfm_website/flutter_flow/flutter_flow_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -22,6 +24,14 @@ class HomePageWidget extends StatefulWidget {
 
   @override
   _HomePageWidgetState createState() => _HomePageWidgetState();
+}
+
+extension EmailValidator on String {
+  bool isValidEmail() {
+    return RegExp(
+            r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+        .hasMatch(this);
+  }
 }
 
 class _HomePageWidgetState extends State<HomePageWidget>
@@ -131,19 +141,36 @@ class _HomePageWidgetState extends State<HomePageWidget>
         duration: Duration(seconds: 1), curve: Curves.ease);
   }
 
-  // DatabaseReference ref = FirebaseDatabase.instance.ref("Requests");
+  final TextEditingController Name = TextEditingController();
+  final TextEditingController Email = TextEditingController();
+  final TextEditingController Details = TextEditingController();
+  String requestStatus = "";
+  DatabaseReference ref = FirebaseDatabase.instance.ref("Requests");
+  int requestSent = 0;
 
-  // Future<void> addRequest() async {
-  //   await ref.set({
-  //     "data_analysis": true,
-  //     "mobile": true,
-  //     "website": true,
-  //     "name": 'abdulelah',
-  //     "email": 'yuki@gmail.com',
-  //     "details": 'aaa',
-  //     "date": DateTime.now(),
-  //   });
-  // }
+  Future<String> addRequest() async {
+    try {
+      CollectionReference Requests =
+          FirebaseFirestore.instance.collection('Requests');
+      // Call the user's CollectionReference to add a new user
+      await Requests.doc(
+        "${Name.text} - ${DateTime.now().toString()}",
+      ).set({
+        'Name': Name.text,
+        'Email': Email.text,
+        'mobile': mobileApp,
+        'web': website,
+        'analysis': dataAnalysis,
+        'date': DateTime.now().toString(),
+        'details': Details.text,
+      });
+      requestSent = requestSent + 1;
+      return 'success';
+    } catch (e) {
+      requestSent = -1;
+      return 'Error adding user';
+    }
+  }
 
   bool isHome = true;
   bool isWorks = false;
@@ -249,7 +276,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         // addRequest();
                                                       },
                                                       child: Text(
-                                                        'CODE FOR ME2',
+                                                        'CODE FOR ME',
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .bodyMedium
@@ -2164,6 +2191,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                       8.0,
                                                                       0.0),
                                                           child: TextFormField(
+                                                            controller: Name,
                                                             obscureText: false,
                                                             decoration:
                                                                 InputDecoration(
@@ -2280,6 +2308,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                       8.0,
                                                                       0.0),
                                                           child: TextFormField(
+                                                            controller: Email,
+                                                            validator: (input) =>
+                                                                input!.isValidEmail()
+                                                                    ? null
+                                                                    : "Invalid Email",
+                                                            autovalidateMode:
+                                                                AutovalidateMode
+                                                                    .onUserInteraction,
                                                             obscureText: false,
                                                             decoration:
                                                                 InputDecoration(
@@ -2406,6 +2442,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                       8.0,
                                                                       0.0),
                                                           child: TextFormField(
+                                                            controller: Details,
                                                             obscureText: false,
                                                             decoration:
                                                                 InputDecoration(
@@ -2507,35 +2544,120 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       30.0, 30.0, 30.0, 30.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
+                                              child: Column(
                                                 children: [
-                                                  Text(
-                                                    'Send Request',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          fontSize: 28.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      InkWell(
+                                                        onTap: () {
+                                                          if (Name.text
+                                                                  .isEmpty ||
+                                                              Email.text
+                                                                  .isEmpty ||
+                                                              Details.text
+                                                                  .isEmpty ||
+                                                              !Email.text!
+                                                                  .isValidEmail()) {
+                                                            requestStatus =
+                                                                'Please check all required fields';
+                                                            requestSent = 0;
+                                                            setState(() {});
+                                                          } else if (mobileApp ==
+                                                                  false &&
+                                                              website ==
+                                                                  false &&
+                                                              dataAnalysis ==
+                                                                  false) {
+                                                            requestStatus =
+                                                                'Please select at least one type of service';
+                                                            requestSent = 0;
+
+                                                            setState(() {});
+                                                          } else {
+                                                            addRequest();
+                                                            Name.clear();
+                                                            Email.clear();
+                                                            Details.clear();
+                                                            mobileApp = false;
+                                                            website = false;
+                                                            dataAnalysis =
+                                                                false;
+                                                            requestStatus =
+                                                                "Request sent, We\'ll be in touch soon.";
+                                                            requestSent =
+                                                                requestSent + 1;
+                                                            setState(() {});
+                                                          }
+                                                        },
+                                                        child: Text(
+                                                          'Send Request',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                fontSize: 28.0,
+                                                                color: requestSent >
+                                                                        0
+                                                                    ? Colors
+                                                                        .greenAccent
+                                                                    : Colors
+                                                                        .white,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                              ),
                                                         ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    10.0,
+                                                                    4.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Icon(
+                                                          Icons
+                                                              .navigate_next_rounded,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          size: 24.0,
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(10.0, 4.0,
-                                                                0.0, 0.0),
-                                                    child: Icon(
-                                                      Icons
-                                                          .navigate_next_rounded,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                      size: 24.0,
+                                                        const EdgeInsets.only(
+                                                            top: 10.0),
+                                                    child: Row(
+                                                      children: [
+                                                        Text(
+                                                          requestStatus,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                fontSize: 14.0,
+                                                                color: requestSent >
+                                                                        0
+                                                                    ? Colors
+                                                                        .greenAccent
+                                                                    : Colors
+                                                                        .redAccent,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w400,
+                                                              ),
+                                                        ),
+                                                      ],
                                                     ),
                                                   ),
                                                 ],
@@ -4319,6 +4441,655 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               useGoogleFonts: false,
                                             ),
                                       ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.9,
+                              height: 500.0,
+                              decoration: BoxDecoration(),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 40.0, 20.0, 20.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Text(
+                                          'What can we do for you?',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'FIGTREE',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                fontSize: 14.0,
+                                                fontWeight: FontWeight.w500,
+                                                useGoogleFonts: false,
+                                              ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 0.0, 20.0, 20.0),
+                                    child: SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 20.0, 0.0),
+                                            child: InkWell(
+                                              onTap: () {
+                                                setState(() {
+                                                  mobileApp = !mobileApp;
+                                                });
+                                              },
+                                              child: AnimatedContainer(
+                                                duration:
+                                                    Duration(milliseconds: 400),
+                                                height: 50.0,
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10.0),
+                                                    border: Border.all(
+                                                      color: mobileApp
+                                                          ? FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate
+                                                          : Color(0xB1F1F4F8),
+                                                    ),
+                                                    color: mobileApp
+                                                        ? FlutterFlowTheme.of(
+                                                                context)
+                                                            .alternate
+                                                        : Color.fromARGB(
+                                                            0, 241, 244, 248)),
+                                                child: Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.00, 0.00),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(15.0, 0.0,
+                                                                15.0, 0.0),
+                                                    child: Text(
+                                                      'Mobile Application',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'FIGTREE',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                                fontSize: 20.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w300,
+                                                                useGoogleFonts:
+                                                                    false,
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ).animateOnPageLoad(animationsMap[
+                                                  'containerOnPageLoadAnimation1']!),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 20.0, 0.0),
+                                            child: InkWell(
+                                              onTap: () {
+                                                setState(() {
+                                                  website = !website;
+                                                });
+                                              },
+                                              child: AnimatedContainer(
+                                                duration:
+                                                    Duration(milliseconds: 400),
+                                                height: 50.0,
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10.0),
+                                                    border: Border.all(
+                                                      color: website
+                                                          ? FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate
+                                                          : Color(0xB1F1F4F8),
+                                                    ),
+                                                    color: website
+                                                        ? FlutterFlowTheme.of(
+                                                                context)
+                                                            .alternate
+                                                        : Color.fromARGB(
+                                                            0, 241, 244, 248)),
+                                                child: Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.00, 0.00),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(15.0, 0.0,
+                                                                15.0, 0.0),
+                                                    child: Text(
+                                                      'Website',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'FIGTREE',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                                fontSize: 20.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w300,
+                                                                useGoogleFonts:
+                                                                    false,
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ).animateOnPageLoad(animationsMap[
+                                                  'containerOnPageLoadAnimation2']!),
+                                            ),
+                                          ),
+                                          InkWell(
+                                            onTap: () {
+                                              setState(() {
+                                                dataAnalysis = !dataAnalysis;
+                                              });
+                                            },
+                                            child: AnimatedContainer(
+                                              duration:
+                                                  Duration(milliseconds: 400),
+                                              height: 50.0,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10.0),
+                                                  border: Border.all(
+                                                    color: dataAnalysis
+                                                        ? FlutterFlowTheme.of(
+                                                                context)
+                                                            .alternate
+                                                        : Color(0xB1F1F4F8),
+                                                  ),
+                                                  color: dataAnalysis
+                                                      ? FlutterFlowTheme.of(
+                                                              context)
+                                                          .alternate
+                                                      : Color.fromARGB(
+                                                          0, 241, 244, 248)),
+                                              child: Align(
+                                                alignment: AlignmentDirectional(
+                                                    0.00, 0.00),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          15.0, 0.0, 15.0, 0.0),
+                                                  child: Text(
+                                                    'Data Analysis',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'FIGTREE',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          fontSize: 20.0,
+                                                          fontWeight:
+                                                              FontWeight.w300,
+                                                          useGoogleFonts: false,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ).animateOnPageLoad(animationsMap[
+                                                'containerOnPageLoadAnimation3']!),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 20.0, 20.0, 20.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 20.0, 0.0),
+                                            child: Container(
+                                              width: 100.0,
+                                              decoration: BoxDecoration(),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        8.0, 0.0, 8.0, 0.0),
+                                                child: TextFormField(
+                                                  controller: Name,
+                                                  obscureText: false,
+                                                  decoration: InputDecoration(
+                                                    labelStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          fontSize: 22.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                    hintText: 'Your Name',
+                                                    hintStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          fontSize: 20.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                    enabledBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .alternate,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    focusedBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    errorBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    focusedErrorBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 20.0, 0.0),
+                                            child: Container(
+                                              width: 100.0,
+                                              decoration: BoxDecoration(),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        8.0, 0.0, 8.0, 0.0),
+                                                child: TextFormField(
+                                                  controller: Email,
+                                                  validator: (input) =>
+                                                      input!.isValidEmail()
+                                                          ? null
+                                                          : "Invalid Email",
+                                                  autovalidateMode:
+                                                      AutovalidateMode
+                                                          .onUserInteraction,
+                                                  obscureText: false,
+                                                  decoration: InputDecoration(
+                                                    labelStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          fontSize: 22.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                    hintText: 'Your Email',
+                                                    hintStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          fontSize: 20.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                    enabledBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .alternate,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    focusedBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    errorBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    focusedErrorBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 20.0, 20.0, 20.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 20.0, 0.0),
+                                            child: Container(
+                                              width: 100.0,
+                                              decoration: BoxDecoration(),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        8.0, 0.0, 8.0, 0.0),
+                                                child: TextFormField(
+                                                  controller: Details,
+                                                  obscureText: false,
+                                                  decoration: InputDecoration(
+                                                    labelStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          fontSize: 22.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                    hintText: 'Project Details',
+                                                    hintStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          fontSize: 20.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                    enabledBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .alternate,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    focusedBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    errorBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    focusedErrorBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        30.0, 30.0, 30.0, 30.0),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            InkWell(
+                                              onTap: () {
+                                                if (Name.text.isEmpty ||
+                                                    Email.text.isEmpty ||
+                                                    Details.text.isEmpty ||
+                                                    !Email.text!
+                                                        .isValidEmail()) {
+                                                  requestStatus =
+                                                      'Please check all required fields';
+                                                  requestSent = 0;
+                                                  setState(() {});
+                                                } else if (mobileApp == false &&
+                                                    website == false &&
+                                                    dataAnalysis == false) {
+                                                  requestStatus =
+                                                      'Please select at least one type of service';
+                                                  requestSent = 0;
+
+                                                  setState(() {});
+                                                } else {
+                                                  addRequest();
+                                                  Name.clear();
+                                                  Email.clear();
+                                                  Details.clear();
+                                                  mobileApp = false;
+                                                  website = false;
+                                                  dataAnalysis = false;
+                                                  requestStatus =
+                                                      "Request sent, We\'ll be in touch soon.";
+                                                  requestSent = requestSent + 1;
+                                                  setState(() {});
+                                                }
+                                              },
+                                              child: Text(
+                                                'Send Request',
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      fontSize: 28.0,
+                                                      color: requestSent > 0
+                                                          ? Colors.greenAccent
+                                                          : Colors.white,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 4.0, 0.0, 0.0),
+                                              child: Icon(
+                                                Icons.navigate_next_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                size: 24.0,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 10.0),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                requestStatus,
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      fontSize: 14.0,
+                                                      color: requestSent > 0
+                                                          ? Colors.greenAccent
+                                                          : Colors.redAccent,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                    ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],
