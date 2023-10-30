@@ -4,6 +4,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '/flutter_flow/flutter_flow_animations.dart';
+import 'package:delayed_widget/delayed_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
@@ -187,6 +188,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
   bool mobileApp = false;
   bool website = false;
   bool dataAnalysis = false;
+  bool Branding = false;
   bool contactus = false;
   @override
   Widget build(BuildContext context) {
@@ -515,6 +517,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             BorderRadius.circular(100),
                                       ),
                                       child: InkWell(
+                                        splashFactory: NoSplash.splashFactory,
+                                        highlightColor: Colors.transparent,
                                         onTap: () {},
                                         onHover: (value) {
                                           setState(() {
@@ -596,6 +600,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             BorderRadius.circular(100),
                                       ),
                                       child: InkWell(
+                                        splashFactory: NoSplash.splashFactory,
+                                        highlightColor: Colors.transparent,
                                         onTap: () {},
                                         onHover: (value) {
                                           setState(() {
@@ -688,23 +694,20 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                   children: [
                                                     Text(
                                                       'Our Services',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'FIGTREE',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                fontSize: 35.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                useGoogleFonts:
-                                                                    false,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'HANK',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            fontSize: 35.0,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            useGoogleFonts:
+                                                                false,
+                                                          ),
                                                     ),
                                                     Padding(
                                                       padding:
@@ -731,13 +734,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'FIGTREE',
+                                                                    'HANK',
                                                                 color: Color(
                                                                     0x66FFFFFF),
                                                                 fontSize: 26.0,
                                                                 fontWeight:
                                                                     FontWeight
-                                                                        .w500,
+                                                                        .bold,
                                                                 useGoogleFonts:
                                                                     false,
                                                               ),
@@ -751,491 +754,814 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           ],
                                         ),
                                       ),
-                                      Stack(
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    25.0, 25.0, 25.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.end,
-                                              children: [
-                                                Expanded(
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 25.0,
-                                                                25.0, 25.0),
-                                                    child: InkWell(
-                                                      onTap: () {},
-                                                      onHover: (value) {
-                                                        setState(() {
-                                                          onHoverServices1 =
-                                                              value;
-                                                        });
-                                                      },
-                                                      child: AnimatedContainer(
-                                                        duration: Duration(
-                                                            milliseconds: 650),
-                                                        width: 100.0,
-                                                        height: 300.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          //here
-                                                          gradient: onHoverServices1
-                                                              ? LinearGradient(
-                                                                  colors: [
-                                                                    Color(
-                                                                        0xFF8674D8),
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .alternate
-                                                                  ],
-                                                                )
-                                                              : LinearGradient(
-                                                                  colors: [
-                                                                    Colors
-                                                                        .transparent,
-                                                                    Colors
-                                                                        .transparent,
-                                                                  ],
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            80, 75, 80, 25),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Expanded(
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  gradient: LinearGradient(
+                                                    colors: [
+                                                      Color(0xFFF55353),
+                                                      Color(0xFFFEB139)
+                                                    ],
+                                                    stops: [0, 1],
+                                                    begin: AlignmentDirectional(
+                                                        0, -1),
+                                                    end: AlignmentDirectional(
+                                                        0, 1),
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(3, 3, 3, 3),
+                                                  child: Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 15,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              18),
+                                                    ),
+                                                    child: Container(
+                                                      width: 550,
+                                                      height: 302,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            Color(0xFF10141C),
+                                                        image: DecorationImage(
+                                                          fit: BoxFit.cover,
+                                                          image: Image.network(
+                                                            '',
+                                                          ).image,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(18),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(15,
+                                                                    15, 15, 15),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Material(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  elevation: 25,
+                                                                  shape:
+                                                                      const CircleBorder(),
+                                                                  child:
+                                                                      Container(
+                                                                    width: 25,
+                                                                    height: 25,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: Color(
+                                                                          0xFF763B35),
+                                                                      shape: BoxShape
+                                                                          .circle,
+                                                                    ),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              3,
+                                                                              3,
+                                                                              3,
+                                                                              3),
+                                                                      child:
+                                                                          Container(
+                                                                        width:
+                                                                            100,
+                                                                        height:
+                                                                            100,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          gradient:
+                                                                              LinearGradient(
+                                                                            colors: [
+                                                                              Color(0xFFF55353),
+                                                                              Color(0xFFFEB139)
+                                                                            ],
+                                                                            stops: [
+                                                                              0,
+                                                                              1
+                                                                            ],
+                                                                            begin:
+                                                                                AlignmentDirectional(0, -1),
+                                                                            end:
+                                                                                AlignmentDirectional(0, 1),
+                                                                          ),
+                                                                          shape:
+                                                                              BoxShape.circle,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
                                                                 ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      25.0),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          15,
+                                                                          0,
+                                                                          0,
+                                                                          0),
+                                                                  child: Text(
+                                                                    'Mobile Applications',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'HANK',
+                                                                          color:
+                                                                              Color(0xD1FFFFFF),
+                                                                          fontSize:
+                                                                              25,
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                          useGoogleFonts:
+                                                                              false,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0,
+                                                                          30,
+                                                                          0,
+                                                                          50),
+                                                              child: Text(
+                                                                'Our Mobile Development Service excels in crafting tailored, user-centric apps for iOS and Android, emphasizing user experience, performance, and security. We deliver seamless, reliable, and secure applications. Rely on our expertise to expand your reach and stay competitive in the mobile-centric market.',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'QuickSand',
+                                                                      color: Color(
+                                                                          0x9EFFFFFF),
+                                                                      fontSize:
+                                                                          18,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                      useGoogleFonts:
+                                                                          false,
+                                                                      lineHeight:
+                                                                          1.5,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
                                                     ),
                                                   ),
                                                 ),
-                                                Expanded(
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 25.0,
-                                                                25.0, 25.0),
-                                                    child: AnimatedContainer(
-                                                      duration: Duration(
-                                                          milliseconds: 650),
-                                                      width: 100.0,
-                                                      height: 300.0,
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0, 0, 25, 0),
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  gradient: LinearGradient(
+                                                    colors: [
+                                                      Color(0xFFF55353),
+                                                      Color(0xFFFEB139)
+                                                    ],
+                                                    stops: [0, 1],
+                                                    begin: AlignmentDirectional(
+                                                        0, -1),
+                                                    end: AlignmentDirectional(
+                                                        0, 1),
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                ),
+                                              ),
+                                            ),
+                                            Expanded(
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  gradient: LinearGradient(
+                                                    colors: [
+                                                      Color(0xFFF55353),
+                                                      Color(0xFFFEB139)
+                                                    ],
+                                                    stops: [0, 1],
+                                                    begin: AlignmentDirectional(
+                                                        0, -1),
+                                                    end: AlignmentDirectional(
+                                                        0, 1),
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(3, 3, 3, 3),
+                                                  child: Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 15,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              18),
+                                                    ),
+                                                    child: Container(
+                                                      width: 550,
+                                                      height: 302,
                                                       decoration: BoxDecoration(
-                                                        //here
-                                                        gradient: onHoverServices2
-                                                            ? LinearGradient(
-                                                                colors: [
-                                                                  Color(
-                                                                      0xFF8674D8),
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .alternate
-                                                                ],
-                                                              )
-                                                            : LinearGradient(
-                                                                colors: [
-                                                                  Colors
-                                                                      .transparent,
-                                                                  Colors
-                                                                      .transparent,
-                                                                ],
-                                                              ),
+                                                        color:
+                                                            Color(0xFF10141C),
+                                                        image: DecorationImage(
+                                                          fit: BoxFit.cover,
+                                                          image: Image.network(
+                                                            '',
+                                                          ).image,
+                                                        ),
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(25.0),
+                                                                .circular(18),
                                                       ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Expanded(
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 25.0,
-                                                                25.0, 25.0),
-                                                    child: AnimatedContainer(
-                                                      duration: Duration(
-                                                          milliseconds: 650),
-                                                      width: 100.0,
-                                                      height: 300.0,
-                                                      decoration: BoxDecoration(
-                                                        //here
-                                                        gradient: onHoverServices3
-                                                            ? LinearGradient(
-                                                                colors: [
-                                                                  Color(
-                                                                      0xFF8674D8),
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .alternate
-                                                                ],
-                                                              )
-                                                            : LinearGradient(
-                                                                colors: [
-                                                                  Colors
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(15,
+                                                                    15, 15, 15),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Material(
+                                                                  color: Colors
                                                                       .transparent,
-                                                                  Colors
-                                                                      .transparent,
-                                                                ],
+                                                                  elevation: 25,
+                                                                  shape:
+                                                                      const CircleBorder(),
+                                                                  child:
+                                                                      Container(
+                                                                    width: 25,
+                                                                    height: 25,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: Color(
+                                                                          0xFF763B35),
+                                                                      shape: BoxShape
+                                                                          .circle,
+                                                                    ),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              3,
+                                                                              3,
+                                                                              3,
+                                                                              3),
+                                                                      child:
+                                                                          Container(
+                                                                        width:
+                                                                            100,
+                                                                        height:
+                                                                            100,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          gradient:
+                                                                              LinearGradient(
+                                                                            colors: [
+                                                                              Color(0xFFF55353),
+                                                                              Color(0xFFFEB139)
+                                                                            ],
+                                                                            stops: [
+                                                                              0,
+                                                                              1
+                                                                            ],
+                                                                            begin:
+                                                                                AlignmentDirectional(0, -1),
+                                                                            end:
+                                                                                AlignmentDirectional(0, 1),
+                                                                          ),
+                                                                          shape:
+                                                                              BoxShape.circle,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          15,
+                                                                          0,
+                                                                          0,
+                                                                          0),
+                                                                  child: Text(
+                                                                    'Web Development',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'HANK',
+                                                                          color:
+                                                                              Color(0xD1FFFFFF),
+                                                                          fontSize:
+                                                                              25,
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                          useGoogleFonts:
+                                                                              false,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0,
+                                                                          30,
+                                                                          0,
+                                                                          50),
+                                                              child: Text(
+                                                                'We are experts in crafting responsive and dynamic web solutions that not only showcase your brand effectively but also provide seamless user experiences. Whether it\'s a corporate website, e-commerce platform, or web application, we leverage cutting-edge technologies to build robust online solutions.',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'QuickSand',
+                                                                      color: Color(
+                                                                          0x9EFFFFFF),
+                                                                      fontSize:
+                                                                          18,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                      useGoogleFonts:
+                                                                          false,
+                                                                      lineHeight:
+                                                                          1.5,
+                                                                    ),
                                                               ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(25.0),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
                                                 ),
-                                              ],
+                                              ),
                                             ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    25.0, 25.0, 25.0, 25.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
-                                              children: [
-                                                Expanded(
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                25.0, 0.0),
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              25.0),
-                                                      child: BackdropFilter(
-                                                        filter:
-                                                            ImageFilter.blur(
-                                                          sigmaX: 100.0,
-                                                          sigmaY: 100.0,
-                                                        ),
-                                                        child: InkWell(
-                                                          onTap: () {},
-                                                          onHover: (value) {
-                                                            setState(() {
-                                                              onHoverServices1 =
-                                                                  value;
-                                                            });
-                                                          },
-                                                          child: Container(
-                                                            width: 100.0,
-                                                            height: 350.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: Color(
-                                                                  0x29FFFFFF),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          25.0),
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          15.0,
-                                                                          15.0,
-                                                                          15.0,
-                                                                          15.0),
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      Text(
-                                                                        'Mobile Development',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'FIGTREE',
-                                                                              color: FlutterFlowTheme.of(context).primaryText,
-                                                                              fontSize: 35.0,
-                                                                              fontWeight: FontWeight.bold,
-                                                                              useGoogleFonts: false,
-                                                                            ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            20.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width: double
-                                                                          .infinity,
-                                                                      decoration:
-                                                                          BoxDecoration(),
-                                                                      child:
-                                                                          Text(
-                                                                        'Our Mobile Development Service excels in crafting tailored, user-centric apps for iOS and Android, emphasizing user experience, performance, and security. We deliver seamless, reliable, and secure applications. Rely on our expertise to expand your reach and stay competitive in the mobile-centric market.',
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Readex Pro',
-                                                                              color: Color(0x84FFFFFF),
-                                                                              fontSize: 20.0,
-                                                                              fontWeight: FontWeight.w500,
-                                                                              lineHeight: 1.5,
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Expanded(
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                25.0, 0.0),
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              25.0),
-                                                      child: BackdropFilter(
-                                                        filter:
-                                                            ImageFilter.blur(
-                                                          sigmaX: 100.0,
-                                                          sigmaY: 100.0,
-                                                        ),
-                                                        child: InkWell(
-                                                          onTap: () {},
-                                                          onHover: (value) {
-                                                            setState(() {
-                                                              onHoverServices2 =
-                                                                  value;
-                                                            });
-                                                          },
-                                                          child: Container(
-                                                            width: 100.0,
-                                                            height: 350.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: Color(
-                                                                  0x29FFFFFF),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          25.0),
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          15.0,
-                                                                          15.0,
-                                                                          15.0,
-                                                                          15.0),
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      Text(
-                                                                        'Web Development',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'FIGTREE',
-                                                                              color: FlutterFlowTheme.of(context).primaryText,
-                                                                              fontSize: 35.0,
-                                                                              fontWeight: FontWeight.bold,
-                                                                              useGoogleFonts: false,
-                                                                            ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            20.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width: double
-                                                                          .infinity,
-                                                                      decoration:
-                                                                          BoxDecoration(),
-                                                                      child:
-                                                                          Text(
-                                                                        'We are experts in crafting responsive and dynamic web solutions that not only showcase your brand effectively but also provide seamless user experiences. Whether it\'s a corporate website, e-commerce platform, or web application, we leverage cutting-edge technologies to build robust online solutions.',
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Readex Pro',
-                                                                              color: Color(0x84FFFFFF),
-                                                                              fontSize: 20.0,
-                                                                              fontWeight: FontWeight.w500,
-                                                                              lineHeight: 1.5,
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Expanded(
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                25.0, 0.0),
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              25.0),
-                                                      child: BackdropFilter(
-                                                        filter:
-                                                            ImageFilter.blur(
-                                                          sigmaX: 100.0,
-                                                          sigmaY: 100.0,
-                                                        ),
-                                                        child: InkWell(
-                                                          onTap: () {},
-                                                          onHover: (value) {
-                                                            setState(() {
-                                                              onHoverServices3 =
-                                                                  value;
-                                                            });
-                                                          },
-                                                          child: Container(
-                                                            width: 100.0,
-                                                            height: 350.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: Color(
-                                                                  0x29FFFFFF),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          25.0),
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          15.0,
-                                                                          15.0,
-                                                                          15.0,
-                                                                          15.0),
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      Text(
-                                                                        'Data Analytics',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'FIGTREE',
-                                                                              color: FlutterFlowTheme.of(context).primaryText,
-                                                                              fontSize: 35.0,
-                                                                              fontWeight: FontWeight.bold,
-                                                                              useGoogleFonts: false,
-                                                                            ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            20.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width: double
-                                                                          .infinity,
-                                                                      decoration:
-                                                                          BoxDecoration(),
-                                                                      child:
-                                                                          Text(
-                                                                        'We leverage data\'s potential as your business asset, employing advanced analytics and visualization to extract actionable insights. Our services enhance decision-making, streamline operations, and deepen customer understanding, giving you a competitive edge through informed choices.',
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Readex Pro',
-                                                                              color: Color(0x84FFFFFF),
-                                                                              fontSize: 20.0,
-                                                                              fontWeight: FontWeight.w500,
-                                                                              lineHeight: 1.5,
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            80, 0, 80, 80),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Expanded(
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  gradient: LinearGradient(
+                                                    colors: [
+                                                      Color(0xFFF55353),
+                                                      Color(0xFFFEB139)
+                                                    ],
+                                                    stops: [0, 1],
+                                                    begin: AlignmentDirectional(
+                                                        0, -1),
+                                                    end: AlignmentDirectional(
+                                                        0, 1),
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(3, 3, 3, 3),
+                                                  child: Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 15,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              18),
+                                                    ),
+                                                    child: Container(
+                                                      width: 550,
+                                                      height: 302,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            Color(0xFF10141C),
+                                                        image: DecorationImage(
+                                                          fit: BoxFit.cover,
+                                                          image: Image.network(
+                                                            '',
+                                                          ).image,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(18),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(15,
+                                                                    15, 15, 15),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Material(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  elevation: 25,
+                                                                  shape:
+                                                                      const CircleBorder(),
+                                                                  child:
+                                                                      Container(
+                                                                    width: 25,
+                                                                    height: 25,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: Color(
+                                                                          0xFF763B35),
+                                                                      shape: BoxShape
+                                                                          .circle,
+                                                                    ),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              3,
+                                                                              3,
+                                                                              3,
+                                                                              3),
+                                                                      child:
+                                                                          Container(
+                                                                        width:
+                                                                            100,
+                                                                        height:
+                                                                            100,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          gradient:
+                                                                              LinearGradient(
+                                                                            colors: [
+                                                                              Color(0xFFF55353),
+                                                                              Color(0xFFFEB139)
+                                                                            ],
+                                                                            stops: [
+                                                                              0,
+                                                                              1
+                                                                            ],
+                                                                            begin:
+                                                                                AlignmentDirectional(0, -1),
+                                                                            end:
+                                                                                AlignmentDirectional(0, 1),
+                                                                          ),
+                                                                          shape:
+                                                                              BoxShape.circle,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          15,
+                                                                          0,
+                                                                          0,
+                                                                          0),
+                                                                  child: Text(
+                                                                    'Data Analysis',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'HANK',
+                                                                          color:
+                                                                              Color(0xD1FFFFFF),
+                                                                          fontSize:
+                                                                              25,
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                          useGoogleFonts:
+                                                                              false,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0,
+                                                                          30,
+                                                                          0,
+                                                                          50),
+                                                              child: Text(
+                                                                'We leverage data\'s potential as your business asset, employing advanced analytics and visualization to extract actionable insights. Our services enhance decision-making, streamline operations, and deepen customer understanding, giving you a competitive edge through informed choices.',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'QuickSand',
+                                                                      color: Color(
+                                                                          0x9EFFFFFF),
+                                                                      fontSize:
+                                                                          18,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                      useGoogleFonts:
+                                                                          false,
+                                                                      lineHeight:
+                                                                          1.5,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0, 0, 25, 0),
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  gradient: LinearGradient(
+                                                    colors: [
+                                                      Color(0xFFF55353),
+                                                      Color(0xFFFEB139)
+                                                    ],
+                                                    stops: [0, 1],
+                                                    begin: AlignmentDirectional(
+                                                        0, -1),
+                                                    end: AlignmentDirectional(
+                                                        0, 1),
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                ),
+                                              ),
+                                            ),
+                                            Expanded(
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  gradient: LinearGradient(
+                                                    colors: [
+                                                      Color(0xFFF55353),
+                                                      Color(0xFFFEB139)
+                                                    ],
+                                                    stops: [0, 1],
+                                                    begin: AlignmentDirectional(
+                                                        0, -1),
+                                                    end: AlignmentDirectional(
+                                                        0, 1),
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(3, 3, 3, 3),
+                                                  child: Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 15,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              18),
+                                                    ),
+                                                    child: Container(
+                                                      width: 550,
+                                                      height: 302,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            Color(0xFF10141C),
+                                                        image: DecorationImage(
+                                                          fit: BoxFit.cover,
+                                                          image: Image.network(
+                                                            '',
+                                                          ).image,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(18),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(15,
+                                                                    15, 15, 15),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Material(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  elevation: 25,
+                                                                  shape:
+                                                                      const CircleBorder(),
+                                                                  child:
+                                                                      Container(
+                                                                    width: 25,
+                                                                    height: 25,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: Color(
+                                                                          0xFF763B35),
+                                                                      shape: BoxShape
+                                                                          .circle,
+                                                                    ),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              3,
+                                                                              3,
+                                                                              3,
+                                                                              3),
+                                                                      child:
+                                                                          Container(
+                                                                        width:
+                                                                            100,
+                                                                        height:
+                                                                            100,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          gradient:
+                                                                              LinearGradient(
+                                                                            colors: [
+                                                                              Color(0xFFF55353),
+                                                                              Color(0xFFFEB139)
+                                                                            ],
+                                                                            stops: [
+                                                                              0,
+                                                                              1
+                                                                            ],
+                                                                            begin:
+                                                                                AlignmentDirectional(0, -1),
+                                                                            end:
+                                                                                AlignmentDirectional(0, 1),
+                                                                          ),
+                                                                          shape:
+                                                                              BoxShape.circle,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          15,
+                                                                          0,
+                                                                          0,
+                                                                          0),
+                                                                  child: Text(
+                                                                    'Brand Identity',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'HANK',
+                                                                          color:
+                                                                              Color(0xD1FFFFFF),
+                                                                          fontSize:
+                                                                              25,
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                          useGoogleFonts:
+                                                                              false,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0,
+                                                                          30,
+                                                                          0,
+                                                                          50),
+                                                              child: Text(
+                                                                'Through our Brand Identity service, we meticulously craft a unique image for your business, incorporating logos, color palettes, typography, and compelling messaging. This ensures consistent brand representation and fosters recognition, trust, and lasting customer loyalty, giving you a competitive edge in the market.',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'QuickSand',
+                                                                      color: Color(
+                                                                          0x9EFFFFFF),
+                                                                      fontSize:
+                                                                          18,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                      useGoogleFonts:
+                                                                          false,
+                                                                      lineHeight:
+                                                                          1.5,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      )
                                     ],
                                   ),
                                 ),
@@ -1251,7 +1577,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'FIGTREE',
+                                            fontFamily: 'HANK',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 35.0,
@@ -1273,10 +1599,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'FIGTREE',
+                                                fontFamily: 'HANK',
                                                 color: Color(0x66FFFFFF),
                                                 fontSize: 26.0,
-                                                fontWeight: FontWeight.w500,
+                                                fontWeight: FontWeight.bold,
                                                 useGoogleFonts: false,
                                               ),
                                         ),
@@ -1285,541 +1611,747 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   ],
                                 ),
                               ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Stack(
-                                    children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    25.0, 25.0, 25.0, 25.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
-                                              children: [
-                                                Expanded(
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                25.0, 0.0),
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              25.0),
-                                                      child: BackdropFilter(
-                                                        filter:
-                                                            ImageFilter.blur(
-                                                          sigmaX: 100.0,
-                                                          sigmaY: 100.0,
-                                                        ),
-                                                        child: Container(
-                                                          width: 100.0,
-                                                          height: 300.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Color(
-                                                                0x29FFFFFF),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        25.0),
-                                                          ),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        15.0,
-                                                                        15.0,
-                                                                        15.0,
-                                                                        15.0),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .center,
-                                                                  children: [
-                                                                    Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Text(
-                                                                          'SwiftRide',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'FIGTREE',
-                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                                fontSize: 35.0,
-                                                                                fontWeight: FontWeight.bold,
-                                                                                useGoogleFonts: false,
-                                                                              ),
-                                                                        ),
-                                                                        Text(
-                                                                          'Mobile App',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'FIGTREE',
-                                                                                color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                fontSize: 16.0,
-                                                                                fontWeight: FontWeight.normal,
-                                                                                useGoogleFonts: false,
-                                                                              ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          20.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      Container(
-                                                                    width: double
-                                                                        .infinity,
-                                                                    decoration:
-                                                                        BoxDecoration(),
-                                                                    child: Text(
-                                                                      'SwiftRide is a cutting-edge, on-demand transportation app that revolutionizes the way people move from one place to another. With a seamless user experience and a vast network of drivers, SwiftRide provides a convenient, safe, and reliable solution for getting around town, whether it\'s a quick ride to the grocery store or a long-distance trip',
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Readex Pro',
-                                                                            color:
-                                                                                Color(0x84FFFFFF),
-                                                                            fontSize:
-                                                                                20.0,
-                                                                            fontWeight:
-                                                                                FontWeight.w500,
-                                                                            lineHeight:
-                                                                                1.5,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Expanded(
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                25.0, 0.0),
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              25.0),
-                                                      child: BackdropFilter(
-                                                        filter:
-                                                            ImageFilter.blur(
-                                                          sigmaX: 100.0,
-                                                          sigmaY: 100.0,
-                                                        ),
-                                                        child: Container(
-                                                          width: 100.0,
-                                                          height: 300.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Color(
-                                                                0x29FFFFFF),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        25.0),
-                                                          ),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        15.0,
-                                                                        15.0,
-                                                                        15.0,
-                                                                        15.0),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .center,
-                                                                  children: [
-                                                                    Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Text(
-                                                                          'OnlineAdvisor',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'FIGTREE',
-                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                                fontSize: 35.0,
-                                                                                fontWeight: FontWeight.bold,
-                                                                                useGoogleFonts: false,
-                                                                              ),
-                                                                        ),
-                                                                        Text(
-                                                                          'Website',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'FIGTREE',
-                                                                                color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                fontSize: 16.0,
-                                                                                fontWeight: FontWeight.normal,
-                                                                                useGoogleFonts: false,
-                                                                              ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          20.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      Container(
-                                                                    width: double
-                                                                        .infinity,
-                                                                    decoration:
-                                                                        BoxDecoration(),
-                                                                    child: Text(
-                                                                      'Platform connects Japanese students with supervisors, providing a user-friendly dashboard for appointment and user tracking. To foster real-time communication, we integrated an embedded chat application powered by Twilio, enhancing collaboration between students and supervisors.',
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Readex Pro',
-                                                                            color:
-                                                                                Color(0x84FFFFFF),
-                                                                            fontSize:
-                                                                                20.0,
-                                                                            fontWeight:
-                                                                                FontWeight.w500,
-                                                                            lineHeight:
-                                                                                1.5,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    80, 75, 80, 25),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                            colors: [
+                                              Color(0xFFF55353),
+                                              Color(0xFFFEB139)
+                                            ],
+                                            stops: [0, 1],
+                                            begin: AlignmentDirectional(0, -1),
+                                            end: AlignmentDirectional(0, 1),
                                           ),
-                                          Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Padding(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  3, 3, 3, 3),
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            elevation: 15,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(18),
+                                            ),
+                                            child: Container(
+                                              width: 550,
+                                              height: 302,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFF10141C),
+                                                image: DecorationImage(
+                                                  fit: BoxFit.cover,
+                                                  image: Image.network(
+                                                    '',
+                                                  ).image,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(18),
+                                              ),
+                                              child: Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        25.0, 0.0, 25.0, 25.0),
-                                                child: Row(
+                                                    .fromSTEB(15, 15, 15, 15),
+                                                child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceEvenly,
+                                                      MainAxisAlignment.start,
                                                   children: [
-                                                    Expanded(
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    25.0,
-                                                                    0.0),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      25.0),
-                                                          child: BackdropFilter(
-                                                            filter: ImageFilter
-                                                                .blur(
-                                                              sigmaX: 100.0,
-                                                              sigmaY: 100.0,
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Material(
+                                                          color: Colors
+                                                              .transparent,
+                                                          elevation: 25,
+                                                          shape:
+                                                              const CircleBorder(),
+                                                          child: Container(
+                                                            width: 25,
+                                                            height: 25,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFF763B35),
+                                                              shape: BoxShape
+                                                                  .circle,
                                                             ),
-                                                            child: Container(
-                                                              width: 100.0,
-                                                              height: 300.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: Color(
-                                                                    0x29FFFFFF),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            25.0),
-                                                              ),
-                                                              child: Padding(
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        15.0,
-                                                                        15.0,
-                                                                        15.0,
-                                                                        15.0),
-                                                                child: Column(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .center,
-                                                                      children: [
-                                                                        Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          children: [
-                                                                            Column(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              children: [
-                                                                                Text(
-                                                                                  'MNShipping',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'FIGTREE',
-                                                                                        color: FlutterFlowTheme.of(context).primaryText,
-                                                                                        fontSize: 35.0,
-                                                                                        fontWeight: FontWeight.bold,
-                                                                                        useGoogleFonts: false,
-                                                                                      ),
-                                                                                ),
-                                                                                Text(
-                                                                                  'Website',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'FIGTREE',
-                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                        fontSize: 16.0,
-                                                                                        fontWeight: FontWeight.normal,
-                                                                                        useGoogleFonts: false,
-                                                                                      ),
-                                                                                ),
-                                                                              ],
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          20.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Container(
-                                                                        width: double
-                                                                            .infinity,
-                                                                        decoration:
-                                                                            BoxDecoration(),
-                                                                        child:
-                                                                            Text(
-                                                                          'We created a management system for an export/import company with an advanced accounting dashboard, data analytics, and a comprehensive notification system. This system also includes scheduled functions for real-time KPI monitoring and alerts to administrators.',
-                                                                          textAlign:
-                                                                              TextAlign.center,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Readex Pro',
-                                                                                color: Color(0x84FFFFFF),
-                                                                                fontSize: 20.0,
-                                                                                fontWeight: FontWeight.w500,
-                                                                                lineHeight: 1.5,
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          3,
+                                                                          3,
+                                                                          3,
+                                                                          3),
+                                                              child: Container(
+                                                                width: 100,
+                                                                height: 100,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  gradient:
+                                                                      LinearGradient(
+                                                                    colors: [
+                                                                      Color(
+                                                                          0xFFF55353),
+                                                                      Color(
+                                                                          0xFFFEB139)
+                                                                    ],
+                                                                    stops: [
+                                                                      0,
+                                                                      1
+                                                                    ],
+                                                                    begin:
+                                                                        AlignmentDirectional(
+                                                                            0,
+                                                                            -1),
+                                                                    end:
+                                                                        AlignmentDirectional(
+                                                                            0,
+                                                                            1),
+                                                                  ),
+                                                                  shape: BoxShape
+                                                                      .circle,
                                                                 ),
                                                               ),
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(15,
+                                                                      0, 0, 0),
+                                                          child: Text(
+                                                            'SwiftRide',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'HANK',
+                                                                  color: Color(
+                                                                      0xD1FFFFFF),
+                                                                  fontSize: 25,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  useGoogleFonts:
+                                                                      false,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ],
                                                     ),
-                                                    Expanded(
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    25.0,
-                                                                    0.0),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      25.0),
-                                                          child: BackdropFilter(
-                                                            filter: ImageFilter
-                                                                .blur(
-                                                              sigmaX: 100.0,
-                                                              sigmaY: 100.0,
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0, 30, 0, 50),
+                                                      child: Text(
+                                                        'SwiftRide is a cutting-edge, on-demand transportation app that revolutionizes the way people move from one place to another. With a seamless user experience and a vast network of drivers, SwiftRide provides a convenient, safe, and reliable solution for getting around town, whether it\'s a quick ride to the grocery store or a long-distance trip',
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'QuickSand',
+                                                              color: Color(
+                                                                  0x9EFFFFFF),
+                                                              fontSize: 18,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              useGoogleFonts:
+                                                                  false,
+                                                              lineHeight: 1.5,
                                                             ),
-                                                            child: Container(
-                                                              width: 100.0,
-                                                              height: 300.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: Color(
-                                                                    0x29FFFFFF),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            25.0),
-                                                              ),
-                                                              child: Padding(
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        15.0,
-                                                                        15.0,
-                                                                        15.0,
-                                                                        15.0),
-                                                                child: Column(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .center,
-                                                                      children: [
-                                                                        Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          children: [
-                                                                            Text(
-                                                                              'FourO',
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'FIGTREE',
-                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    fontSize: 35.0,
-                                                                                    fontWeight: FontWeight.bold,
-                                                                                    useGoogleFonts: false,
-                                                                                  ),
-                                                                            ),
-                                                                            Text(
-                                                                              'Data Analytics',
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'FIGTREE',
-                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                    fontSize: 16.0,
-                                                                                    fontWeight: FontWeight.normal,
-                                                                                    useGoogleFonts: false,
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          20.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Container(
-                                                                        width: double
-                                                                            .infinity,
-                                                                        decoration:
-                                                                            BoxDecoration(),
-                                                                        child:
-                                                                            Text(
-                                                                          'We\'ve created a data analytics platform for energy systems with diverse visualizations. It includes a monitoring system where machines communicate with staff via email, providing information and alerts based on urgency',
-                                                                          textAlign:
-                                                                              TextAlign.center,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Readex Pro',
-                                                                                color: Color(0x84FFFFFF),
-                                                                                fontSize: 20.0,
-                                                                                fontWeight: FontWeight.w500,
-                                                                                lineHeight: 1.5,
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
                                                       ),
                                                     ),
                                                   ],
                                                 ),
                                               ),
-                                            ],
+                                            ),
                                           ),
-                                        ],
+                                        ),
                                       ),
-                                    ],
-                                  ),
-                                ],
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 0, 25, 0),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                            colors: [
+                                              Color(0xFFF55353),
+                                              Color(0xFFFEB139)
+                                            ],
+                                            stops: [0, 1],
+                                            begin: AlignmentDirectional(0, -1),
+                                            end: AlignmentDirectional(0, 1),
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                            colors: [
+                                              Color(0xFFF55353),
+                                              Color(0xFFFEB139)
+                                            ],
+                                            stops: [0, 1],
+                                            begin: AlignmentDirectional(0, -1),
+                                            end: AlignmentDirectional(0, 1),
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  3, 3, 3, 3),
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            elevation: 15,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(18),
+                                            ),
+                                            child: Container(
+                                              width: 550,
+                                              height: 302,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFF10141C),
+                                                image: DecorationImage(
+                                                  fit: BoxFit.cover,
+                                                  image: Image.network(
+                                                    '',
+                                                  ).image,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(18),
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(15, 15, 15, 15),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Material(
+                                                          color: Colors
+                                                              .transparent,
+                                                          elevation: 25,
+                                                          shape:
+                                                              const CircleBorder(),
+                                                          child: Container(
+                                                            width: 25,
+                                                            height: 25,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFF763B35),
+                                                              shape: BoxShape
+                                                                  .circle,
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          3,
+                                                                          3,
+                                                                          3,
+                                                                          3),
+                                                              child: Container(
+                                                                width: 100,
+                                                                height: 100,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  gradient:
+                                                                      LinearGradient(
+                                                                    colors: [
+                                                                      Color(
+                                                                          0xFFF55353),
+                                                                      Color(
+                                                                          0xFFFEB139)
+                                                                    ],
+                                                                    stops: [
+                                                                      0,
+                                                                      1
+                                                                    ],
+                                                                    begin:
+                                                                        AlignmentDirectional(
+                                                                            0,
+                                                                            -1),
+                                                                    end:
+                                                                        AlignmentDirectional(
+                                                                            0,
+                                                                            1),
+                                                                  ),
+                                                                  shape: BoxShape
+                                                                      .circle,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(15,
+                                                                      0, 0, 0),
+                                                          child: Text(
+                                                            'OnlineAdvisor',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'HANK',
+                                                                  color: Color(
+                                                                      0xD1FFFFFF),
+                                                                  fontSize: 25,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  useGoogleFonts:
+                                                                      false,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0, 30, 0, 50),
+                                                      child: Text(
+                                                        'Platform connects Japanese students with supervisors, providing a user-friendly dashboard for appointment and user tracking. To foster real-time communication, we integrated an embedded chat application powered by Twilio, enhancing collaboration between students and supervisors.',
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'QuickSand',
+                                                              color: Color(
+                                                                  0x9EFFFFFF),
+                                                              fontSize: 18,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              useGoogleFonts:
+                                                                  false,
+                                                              lineHeight: 1.5,
+                                                            ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    80, 0, 80, 25),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                            colors: [
+                                              Color(0xFFF55353),
+                                              Color(0xFFFEB139)
+                                            ],
+                                            stops: [0, 1],
+                                            begin: AlignmentDirectional(0, -1),
+                                            end: AlignmentDirectional(0, 1),
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  3, 3, 3, 3),
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            elevation: 15,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(18),
+                                            ),
+                                            child: Container(
+                                              width: 550,
+                                              height: 302,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFF10141C),
+                                                image: DecorationImage(
+                                                  fit: BoxFit.cover,
+                                                  image: Image.network(
+                                                    '',
+                                                  ).image,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(18),
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(15, 15, 15, 15),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Material(
+                                                          color: Colors
+                                                              .transparent,
+                                                          elevation: 25,
+                                                          shape:
+                                                              const CircleBorder(),
+                                                          child: Container(
+                                                            width: 25,
+                                                            height: 25,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFF763B35),
+                                                              shape: BoxShape
+                                                                  .circle,
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          3,
+                                                                          3,
+                                                                          3,
+                                                                          3),
+                                                              child: Container(
+                                                                width: 100,
+                                                                height: 100,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  gradient:
+                                                                      LinearGradient(
+                                                                    colors: [
+                                                                      Color(
+                                                                          0xFFF55353),
+                                                                      Color(
+                                                                          0xFFFEB139)
+                                                                    ],
+                                                                    stops: [
+                                                                      0,
+                                                                      1
+                                                                    ],
+                                                                    begin:
+                                                                        AlignmentDirectional(
+                                                                            0,
+                                                                            -1),
+                                                                    end:
+                                                                        AlignmentDirectional(
+                                                                            0,
+                                                                            1),
+                                                                  ),
+                                                                  shape: BoxShape
+                                                                      .circle,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(15,
+                                                                      0, 0, 0),
+                                                          child: Text(
+                                                            'FourO',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'HANK',
+                                                                  color: Color(
+                                                                      0xD1FFFFFF),
+                                                                  fontSize: 25,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  useGoogleFonts:
+                                                                      false,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0, 30, 0, 50),
+                                                      child: Text(
+                                                        'We\'ve created a data analytics platform for energy systems with diverse visualizations. It includes a monitoring system where machines communicate with staff via email, providing information and alerts based on urgency',
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'QuickSand',
+                                                              color: Color(
+                                                                  0x9EFFFFFF),
+                                                              fontSize: 18,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              useGoogleFonts:
+                                                                  false,
+                                                              lineHeight: 1.5,
+                                                            ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 0, 25, 0),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                            colors: [
+                                              Color(0xFFF55353),
+                                              Color(0xFFFEB139)
+                                            ],
+                                            stops: [0, 1],
+                                            begin: AlignmentDirectional(0, -1),
+                                            end: AlignmentDirectional(0, 1),
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                            colors: [
+                                              Color(0xFFF55353),
+                                              Color(0xFFFEB139)
+                                            ],
+                                            stops: [0, 1],
+                                            begin: AlignmentDirectional(0, -1),
+                                            end: AlignmentDirectional(0, 1),
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  3, 3, 3, 3),
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            elevation: 15,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(18),
+                                            ),
+                                            child: Container(
+                                              width: 550,
+                                              height: 302,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFF10141C),
+                                                image: DecorationImage(
+                                                  fit: BoxFit.cover,
+                                                  image: Image.network(
+                                                    '',
+                                                  ).image,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(18),
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(15, 15, 15, 15),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Material(
+                                                          color: Colors
+                                                              .transparent,
+                                                          elevation: 25,
+                                                          shape:
+                                                              const CircleBorder(),
+                                                          child: Container(
+                                                            width: 25,
+                                                            height: 25,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFF763B35),
+                                                              shape: BoxShape
+                                                                  .circle,
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          3,
+                                                                          3,
+                                                                          3,
+                                                                          3),
+                                                              child: Container(
+                                                                width: 100,
+                                                                height: 100,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  gradient:
+                                                                      LinearGradient(
+                                                                    colors: [
+                                                                      Color(
+                                                                          0xFFF55353),
+                                                                      Color(
+                                                                          0xFFFEB139)
+                                                                    ],
+                                                                    stops: [
+                                                                      0,
+                                                                      1
+                                                                    ],
+                                                                    begin:
+                                                                        AlignmentDirectional(
+                                                                            0,
+                                                                            -1),
+                                                                    end:
+                                                                        AlignmentDirectional(
+                                                                            0,
+                                                                            1),
+                                                                  ),
+                                                                  shape: BoxShape
+                                                                      .circle,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(15,
+                                                                      0, 0, 0),
+                                                          child: Text(
+                                                            'MNShipping',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'HANK',
+                                                                  color: Color(
+                                                                      0xD1FFFFFF),
+                                                                  fontSize: 25,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  useGoogleFonts:
+                                                                      false,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0, 30, 0, 50),
+                                                      child: Text(
+                                                        'We created a management system for an export/import company with an advanced accounting dashboard, data analytics, and a comprehensive notification system. This system also includes scheduled functions for real-time KPI monitoring and alerts to administrators.',
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'QuickSand',
+                                                              color: Color(
+                                                                  0x9EFFFFFF),
+                                                              fontSize: 18,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              useGoogleFonts:
+                                                                  false,
+                                                              lineHeight: 1.5,
+                                                            ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -1832,7 +2364,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'FIGTREE',
+                                            fontFamily: 'HANK',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 35.0,
@@ -1854,10 +2386,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'FIGTREE',
+                                                fontFamily: 'HANK',
                                                 color: Color(0x66FFFFFF),
                                                 fontSize: 26.0,
-                                                fontWeight: FontWeight.w500,
+                                                fontWeight: FontWeight.bold,
                                                 useGoogleFonts: false,
                                               ),
                                         ),
@@ -1877,7 +2409,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'FIGTREE',
+                                            fontFamily: 'HANK',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 35.0,
@@ -1899,10 +2431,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'FIGTREE',
+                                                fontFamily: 'HANK',
                                                 color: Color(0x66FFFFFF),
                                                 fontSize: 26.0,
-                                                fontWeight: FontWeight.w500,
+                                                fontWeight: FontWeight.bold,
                                                 useGoogleFonts: false,
                                               ),
                                         ),
@@ -1940,13 +2472,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'FIGTREE',
+                                                          fontFamily: 'HANK',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           fontSize: 26.0,
                                                           fontWeight:
-                                                              FontWeight.w500,
+                                                              FontWeight.bold,
                                                           useGoogleFonts: false,
                                                         ),
                                                   ),
@@ -1960,12 +2492,20 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                20.0, 0.0),
+                                                  Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 10,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              100),
+                                                    ),
                                                     child: InkWell(
+                                                      splashFactory: NoSplash
+                                                          .splashFactory,
+                                                      highlightColor:
+                                                          Colors.transparent,
                                                       onTap: () {
                                                         setState(() {
                                                           mobileApp =
@@ -1974,78 +2514,170 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       },
                                                       child: AnimatedContainer(
                                                         duration: Duration(
-                                                            milliseconds: 400),
-                                                        height: 50.0,
+                                                            milliseconds: 500),
+                                                        width: mobileApp
+                                                            ? 175
+                                                            : 135,
+                                                        height: 50,
                                                         decoration:
                                                             BoxDecoration(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            10.0),
-                                                                border:
-                                                                    Border.all(
-                                                                  color: mobileApp
-                                                                      ? FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate
-                                                                      : Color(
-                                                                          0xB1F1F4F8),
-                                                                ),
-                                                                color: mobileApp
-                                                                    ? FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .alternate
-                                                                    : Color
-                                                                        .fromARGB(
+                                                          gradient:
+                                                              LinearGradient(
+                                                            colors: [
+                                                              Color(0xFFF55353),
+                                                              Color(0xFFFEB139)
+                                                            ],
+                                                            stops: [0, 1],
+                                                            begin:
+                                                                AlignmentDirectional(
+                                                                    0, -1),
+                                                            end:
+                                                                AlignmentDirectional(
+                                                                    0, 1),
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      100),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(2,
+                                                                      2, 2, 2),
+                                                          child: Container(
+                                                            width: 100,
+                                                            height: 100,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFF10141C),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          100),
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          13,
+                                                                          0,
+                                                                          13,
+                                                                          0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .spaceBetween,
+                                                                children: [
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
                                                                             0,
-                                                                            241,
-                                                                            244,
-                                                                            248)),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.00, 0.00),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        15.0,
-                                                                        0.0,
-                                                                        15.0,
-                                                                        0.0),
-                                                            child: Text(
-                                                              'Mobile Application',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'FIGTREE',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    fontSize:
-                                                                        20.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w300,
-                                                                    useGoogleFonts:
-                                                                        false,
+                                                                            0,
+                                                                            0,
+                                                                            4),
+                                                                    child: Text(
+                                                                      'Mobile App',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'HANK',
+                                                                            color:
+                                                                                Color(0xDCFFFFFF),
+                                                                            fontSize:
+                                                                                20,
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                false,
+                                                                          ),
+                                                                    ),
                                                                   ),
+                                                                  mobileApp
+                                                                      ? DelayedWidget(
+                                                                          delayDuration:
+                                                                              Duration(milliseconds: 500), // Not required
+                                                                          animationDuration:
+                                                                              Duration(milliseconds: 400), // Not required
+                                                                          animation:
+                                                                              DelayedAnimations.SLIDE_FROM_RIGHT, // No
+                                                                          child:
+                                                                              Container(
+                                                                            width:
+                                                                                30,
+                                                                            height:
+                                                                                30,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              gradient: LinearGradient(
+                                                                                colors: [
+                                                                                  Color(0xFFF55353),
+                                                                                  Color(0xFFFEB139)
+                                                                                ],
+                                                                                stops: [
+                                                                                  0,
+                                                                                  1
+                                                                                ],
+                                                                                begin: AlignmentDirectional(0, -1),
+                                                                                end: AlignmentDirectional(0, 1),
+                                                                              ),
+                                                                              shape: BoxShape.circle,
+                                                                            ),
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                                                                              child: Container(
+                                                                                  width: 100,
+                                                                                  height: 100,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Color(0xFF10141C),
+                                                                                    shape: BoxShape.circle,
+                                                                                  ),
+                                                                                  child: DelayedWidget(
+                                                                                    delayDuration: Duration(milliseconds: 800), // Not required
+                                                                                    animationDuration: Duration(milliseconds: 400), // Not required
+                                                                                    animation: DelayedAnimations.SLIDE_FROM_BOTTOM, // No),
+                                                                                    child: Icon(
+                                                                                      Icons.check,
+                                                                                      size: 20,
+                                                                                      color: Colors.white,
+                                                                                    ),
+                                                                                  )),
+                                                                            ),
+                                                                          ),
+                                                                        )
+                                                                      : Container()
+                                                                ],
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
-                                                      ).animateOnPageLoad(
-                                                          animationsMap[
-                                                              'containerOnPageLoadAnimation1']!),
+                                                      ),
                                                     ),
                                                   ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                20.0, 0.0),
+                                                  SizedBox(
+                                                    width: 15,
+                                                  ),
+                                                  Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 10,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              100),
+                                                    ),
                                                     child: InkWell(
+                                                      splashFactory: NoSplash
+                                                          .splashFactory,
+                                                      highlightColor:
+                                                          Colors.transparent,
                                                       onTap: () {
                                                         setState(() {
                                                           website = !website;
@@ -2053,143 +2685,494 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       },
                                                       child: AnimatedContainer(
                                                         duration: Duration(
-                                                            milliseconds: 400),
-                                                        height: 50.0,
+                                                            milliseconds: 500),
+                                                        width:
+                                                            website ? 155 : 109,
+                                                        height: 50,
                                                         decoration:
                                                             BoxDecoration(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            10.0),
-                                                                border:
-                                                                    Border.all(
-                                                                  color: website
-                                                                      ? FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate
-                                                                      : Color(
-                                                                          0xB1F1F4F8),
-                                                                ),
-                                                                color: website
-                                                                    ? FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .alternate
-                                                                    : Color
-                                                                        .fromARGB(
-                                                                            0,
-                                                                            241,
-                                                                            244,
-                                                                            248)),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.00, 0.00),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        15.0,
-                                                                        0.0,
-                                                                        15.0,
-                                                                        0.0),
-                                                            child: Text(
-                                                              'Website',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'FIGTREE',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    fontSize:
-                                                                        20.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w300,
-                                                                    useGoogleFonts:
-                                                                        false,
-                                                                  ),
-                                                            ),
+                                                          gradient:
+                                                              LinearGradient(
+                                                            colors: [
+                                                              Color(0xFFF55353),
+                                                              Color(0xFFFEB139)
+                                                            ],
+                                                            stops: [0, 1],
+                                                            begin:
+                                                                AlignmentDirectional(
+                                                                    0, -1),
+                                                            end:
+                                                                AlignmentDirectional(
+                                                                    0, 1),
                                                           ),
-                                                        ),
-                                                      ).animateOnPageLoad(
-                                                          animationsMap[
-                                                              'containerOnPageLoadAnimation2']!),
-                                                    ),
-                                                  ),
-                                                  InkWell(
-                                                    onTap: () {
-                                                      setState(() {
-                                                        dataAnalysis =
-                                                            !dataAnalysis;
-                                                      });
-                                                    },
-                                                    child: AnimatedContainer(
-                                                      duration: Duration(
-                                                          milliseconds: 400),
-                                                      height: 50.0,
-                                                      decoration: BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      10.0),
-                                                          border: Border.all(
-                                                            color: dataAnalysis
-                                                                ? FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .alternate
-                                                                : Color(
-                                                                    0xB1F1F4F8),
-                                                          ),
-                                                          color: dataAnalysis
-                                                              ? FlutterFlowTheme
-                                                                      .of(
-                                                                          context)
-                                                                  .alternate
-                                                              : Color.fromARGB(
-                                                                  0,
-                                                                  241,
-                                                                  244,
-                                                                  248)),
-                                                      child: Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                0.00, 0.00),
+                                                                      100),
+                                                        ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      15.0,
-                                                                      0.0,
-                                                                      15.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            'Data Analysis',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'FIGTREE',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
-                                                                  fontSize:
-                                                                      20.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w300,
-                                                                  useGoogleFonts:
-                                                                      false,
-                                                                ),
+                                                                  .fromSTEB(2,
+                                                                      2, 2, 2),
+                                                          child: Container(
+                                                            width: 100,
+                                                            height: 100,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFF10141C),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          100),
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          13,
+                                                                          0,
+                                                                          13,
+                                                                          0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .spaceBetween,
+                                                                children: [
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            4),
+                                                                    child: Text(
+                                                                      'Website',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'HANK',
+                                                                            color:
+                                                                                Color(0xDCFFFFFF),
+                                                                            fontSize:
+                                                                                20,
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                false,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                  website
+                                                                      ? DelayedWidget(
+                                                                          delayDuration:
+                                                                              Duration(milliseconds: 500), // Not required
+                                                                          animationDuration:
+                                                                              Duration(milliseconds: 400), // Not required
+                                                                          animation:
+                                                                              DelayedAnimations.SLIDE_FROM_RIGHT, // No
+                                                                          child:
+                                                                              Container(
+                                                                            width:
+                                                                                30,
+                                                                            height:
+                                                                                30,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              gradient: LinearGradient(
+                                                                                colors: [
+                                                                                  Color(0xFFF55353),
+                                                                                  Color(0xFFFEB139)
+                                                                                ],
+                                                                                stops: [
+                                                                                  0,
+                                                                                  1
+                                                                                ],
+                                                                                begin: AlignmentDirectional(0, -1),
+                                                                                end: AlignmentDirectional(0, 1),
+                                                                              ),
+                                                                              shape: BoxShape.circle,
+                                                                            ),
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                                                                              child: Container(
+                                                                                  width: 100,
+                                                                                  height: 100,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Color(0xFF10141C),
+                                                                                    shape: BoxShape.circle,
+                                                                                  ),
+                                                                                  child: DelayedWidget(
+                                                                                    delayDuration: Duration(milliseconds: 800), // Not required
+                                                                                    animationDuration: Duration(milliseconds: 400), // Not required
+                                                                                    animation: DelayedAnimations.SLIDE_FROM_BOTTOM, // No),
+                                                                                    child: Icon(
+                                                                                      Icons.check,
+                                                                                      size: 20,
+                                                                                      color: Colors.white,
+                                                                                    ),
+                                                                                  )),
+                                                                            ),
+                                                                          ),
+                                                                        )
+                                                                      : Container()
+                                                                ],
+                                                              ),
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
-                                                    ).animateOnPageLoad(
-                                                        animationsMap[
-                                                            'containerOnPageLoadAnimation3']!),
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 15,
+                                                  ),
+                                                  Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 10,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              100),
+                                                    ),
+                                                    child: InkWell(
+                                                      splashFactory: NoSplash
+                                                          .splashFactory,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () {
+                                                        setState(() {
+                                                          dataAnalysis =
+                                                              !dataAnalysis;
+                                                        });
+                                                      },
+                                                      child: AnimatedContainer(
+                                                        duration: Duration(
+                                                            milliseconds: 500),
+                                                        width: dataAnalysis
+                                                            ? 210
+                                                            : 161,
+                                                        height: 50,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          gradient:
+                                                              LinearGradient(
+                                                            colors: [
+                                                              Color(0xFFF55353),
+                                                              Color(0xFFFEB139)
+                                                            ],
+                                                            stops: [0, 1],
+                                                            begin:
+                                                                AlignmentDirectional(
+                                                                    0, -1),
+                                                            end:
+                                                                AlignmentDirectional(
+                                                                    0, 1),
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      100),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(2,
+                                                                      2, 2, 2),
+                                                          child: Container(
+                                                            width: 100,
+                                                            height: 100,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFF10141C),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          100),
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          13,
+                                                                          0,
+                                                                          13,
+                                                                          0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .spaceBetween,
+                                                                children: [
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            4),
+                                                                    child: Text(
+                                                                      'Data Analysis',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'HANK',
+                                                                            color:
+                                                                                Color(0xDCFFFFFF),
+                                                                            fontSize:
+                                                                                20,
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                false,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                  dataAnalysis
+                                                                      ? DelayedWidget(
+                                                                          delayDuration:
+                                                                              Duration(milliseconds: 500), // Not required
+                                                                          animationDuration:
+                                                                              Duration(milliseconds: 400), // Not required
+                                                                          animation:
+                                                                              DelayedAnimations.SLIDE_FROM_RIGHT, // No
+                                                                          child:
+                                                                              Container(
+                                                                            width:
+                                                                                30,
+                                                                            height:
+                                                                                30,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              gradient: LinearGradient(
+                                                                                colors: [
+                                                                                  Color(0xFFF55353),
+                                                                                  Color(0xFFFEB139)
+                                                                                ],
+                                                                                stops: [
+                                                                                  0,
+                                                                                  1
+                                                                                ],
+                                                                                begin: AlignmentDirectional(0, -1),
+                                                                                end: AlignmentDirectional(0, 1),
+                                                                              ),
+                                                                              shape: BoxShape.circle,
+                                                                            ),
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                                                                              child: Container(
+                                                                                  width: 100,
+                                                                                  height: 100,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Color(0xFF10141C),
+                                                                                    shape: BoxShape.circle,
+                                                                                  ),
+                                                                                  child: DelayedWidget(
+                                                                                    delayDuration: Duration(milliseconds: 800), // Not required
+                                                                                    animationDuration: Duration(milliseconds: 400), // Not required
+                                                                                    animation: DelayedAnimations.SLIDE_FROM_BOTTOM, // No),
+                                                                                    child: Icon(
+                                                                                      Icons.check,
+                                                                                      size: 20,
+                                                                                      color: Colors.white,
+                                                                                    ),
+                                                                                  )),
+                                                                            ),
+                                                                          ),
+                                                                        )
+                                                                      : Container()
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 15,
+                                                  ),
+                                                  Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 10,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              100),
+                                                    ),
+                                                    child: InkWell(
+                                                      splashFactory: NoSplash
+                                                          .splashFactory,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () {
+                                                        setState(() {
+                                                          Branding = !Branding;
+                                                        });
+                                                      },
+                                                      child: AnimatedContainer(
+                                                        duration: Duration(
+                                                            milliseconds: 500),
+                                                        width: Branding
+                                                            ? 160
+                                                            : 114,
+                                                        height: 50,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          gradient:
+                                                              LinearGradient(
+                                                            colors: [
+                                                              Color(0xFFF55353),
+                                                              Color(0xFFFEB139)
+                                                            ],
+                                                            stops: [0, 1],
+                                                            begin:
+                                                                AlignmentDirectional(
+                                                                    0, -1),
+                                                            end:
+                                                                AlignmentDirectional(
+                                                                    0, 1),
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      100),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(2,
+                                                                      2, 2, 2),
+                                                          child: Container(
+                                                            width: 100,
+                                                            height: 100,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFF10141C),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          100),
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          13,
+                                                                          0,
+                                                                          13,
+                                                                          0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .spaceBetween,
+                                                                children: [
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            4),
+                                                                    child: Text(
+                                                                      'Branding',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'HANK',
+                                                                            color:
+                                                                                Color(0xDCFFFFFF),
+                                                                            fontSize:
+                                                                                20,
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                false,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                  Branding
+                                                                      ? DelayedWidget(
+                                                                          delayDuration:
+                                                                              Duration(milliseconds: 500), // Not required
+                                                                          animationDuration:
+                                                                              Duration(milliseconds: 400), // Not required
+                                                                          animation:
+                                                                              DelayedAnimations.SLIDE_FROM_RIGHT, // No
+                                                                          child:
+                                                                              Container(
+                                                                            width:
+                                                                                30,
+                                                                            height:
+                                                                                30,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              gradient: LinearGradient(
+                                                                                colors: [
+                                                                                  Color(0xFFF55353),
+                                                                                  Color(0xFFFEB139)
+                                                                                ],
+                                                                                stops: [
+                                                                                  0,
+                                                                                  1
+                                                                                ],
+                                                                                begin: AlignmentDirectional(0, -1),
+                                                                                end: AlignmentDirectional(0, 1),
+                                                                              ),
+                                                                              shape: BoxShape.circle,
+                                                                            ),
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                                                                              child: Container(
+                                                                                  width: 100,
+                                                                                  height: 100,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Color(0xFF10141C),
+                                                                                    shape: BoxShape.circle,
+                                                                                  ),
+                                                                                  child: DelayedWidget(
+                                                                                    delayDuration: Duration(milliseconds: 800), // Not required
+                                                                                    animationDuration: Duration(milliseconds: 400), // Not required
+                                                                                    animation: DelayedAnimations.SLIDE_FROM_BOTTOM, // No),
+                                                                                    child: Icon(
+                                                                                      Icons.check,
+                                                                                      size: 20,
+                                                                                      color: Colors.white,
+                                                                                    ),
+                                                                                  )),
+                                                                            ),
+                                                                          ),
+                                                                        )
+                                                                      : Container()
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
                                                   ),
                                                 ],
                                               ),
@@ -2257,9 +3240,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   UnderlineInputBorder(
                                                                 borderSide:
                                                                     BorderSide(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .alternate,
+                                                                  color: Color(
+                                                                      0xFFF55353),
                                                                   width: 2.0,
                                                                 ),
                                                                 borderRadius:
@@ -2271,9 +3253,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   UnderlineInputBorder(
                                                                 borderSide:
                                                                     BorderSide(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
+                                                                  color: Color(
+                                                                      0xFFF55353),
                                                                   width: 2.0,
                                                                 ),
                                                                 borderRadius:
@@ -2381,9 +3362,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   UnderlineInputBorder(
                                                                 borderSide:
                                                                     BorderSide(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .alternate,
+                                                                  color: Color(
+                                                                      0xFFF55353),
                                                                   width: 2.0,
                                                                 ),
                                                                 borderRadius:
@@ -2395,9 +3375,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   UnderlineInputBorder(
                                                                 borderSide:
                                                                     BorderSide(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
+                                                                  color: Color(
+                                                                      0xFFF55353),
                                                                   width: 2.0,
                                                                 ),
                                                                 borderRadius:
@@ -2508,9 +3487,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   UnderlineInputBorder(
                                                                 borderSide:
                                                                     BorderSide(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .alternate,
+                                                                  color: Color(
+                                                                      0xFFF55353),
                                                                   width: 2.0,
                                                                 ),
                                                                 borderRadius:
@@ -2522,9 +3500,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   UnderlineInputBorder(
                                                                 borderSide:
                                                                     BorderSide(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
+                                                                  color: Color(
+                                                                      0xFFF55353),
                                                                   width: 2.0,
                                                                 ),
                                                                 borderRadius:
@@ -2583,6 +3560,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         MainAxisSize.max,
                                                     children: [
                                                       InkWell(
+                                                        splashFactory: NoSplash
+                                                            .splashFactory,
+                                                        highlightColor:
+                                                            Colors.transparent,
                                                         onTap: () {
                                                           if (Name.text
                                                                   .isEmpty ||
@@ -2675,8 +3656,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
+                                                                useGoogleFonts:
+                                                                    false,
                                                                 fontFamily:
-                                                                    'Readex Pro',
+                                                                    'HANK',
                                                                 fontSize: 14.0,
                                                                 color: requestSent >
                                                                         0
@@ -2722,14 +3705,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'FIGTREE',
+                                                          useGoogleFonts: false,
+                                                          fontFamily: 'HANK',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           fontSize: 26.0,
                                                           fontWeight:
                                                               FontWeight.w500,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ],
@@ -2749,14 +3732,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'FIGTREE',
+                                                          useGoogleFonts: false,
+                                                          fontFamily: 'HANK',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           fontSize: 26.0,
                                                           fontWeight:
                                                               FontWeight.w500,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ],
@@ -2776,14 +3759,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'FIGTREE',
+                                                          useGoogleFonts: false,
+                                                          fontFamily: 'HANK',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           fontSize: 26.0,
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ],
@@ -2803,68 +3786,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'FIGTREE',
+                                                          useGoogleFonts: false,
+                                                          fontFamily: 'HANK',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           fontSize: 26.0,
                                                           fontWeight:
-                                                              FontWeight.w500,
-                                                          useGoogleFonts: false,
-                                                        ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      20.0, 0.0, 20.0, 10.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  SelectableText(
-                                                    '+961-76609497',
-                                                    textAlign: TextAlign.center,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'FIGTREE',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          fontSize: 26.0,
-                                                          fontWeight:
                                                               FontWeight.bold,
-                                                          useGoogleFonts: false,
-                                                        ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      20.0, 0.0, 20.0, 10.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  SelectableText(
-                                                    '+961-70858410',
-                                                    textAlign: TextAlign.center,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'FIGTREE',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          fontSize: 26.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ],
@@ -2878,20 +3807,20 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   SelectableText(
-                                                    '+961-76030969',
+                                                    '+961-70858410',
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'FIGTREE',
+                                                          useGoogleFonts: false,
+                                                          fontFamily: 'HANK',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           fontSize: 26.0,
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ],
@@ -2988,23 +3917,43 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0, 0, 0, 3),
-                                          child: GradientText(
-                                            'Catalyst',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'HANK',
-                                                  fontSize: 45,
-                                                  fontWeight: FontWeight.w900,
-                                                  useGoogleFonts: false,
-                                                ),
-                                            colors: [
-                                              Color(0xFFF55353),
-                                              Color(0xFFFEB139)
-                                            ],
-                                            gradientDirection:
-                                                GradientDirection.ltr,
-                                            gradientType: GradientType.linear,
+                                          child: InkWell(
+                                            splashFactory:
+                                                NoSplash.splashFactory,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () {
+                                              WidgetsBinding.instance
+                                                  .addPostFrameCallback(
+                                                      (_) => scrollAnimated(0));
+
+                                              setState(() {
+                                                isHome = true;
+                                                isAbout = false;
+                                                isService = false;
+                                                isWorks = false;
+                                                contactus = false;
+                                              });
+                                            },
+                                            child: GradientText(
+                                              'Catalyst',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'HANK',
+                                                        fontSize: 45,
+                                                        fontWeight:
+                                                            FontWeight.w900,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                              colors: [
+                                                Color(0xFFF55353),
+                                                Color(0xFFFEB139)
+                                              ],
+                                              gradientDirection:
+                                                  GradientDirection.ltr,
+                                              gradientType: GradientType.linear,
+                                            ),
                                           ),
                                         ),
                                       ],
@@ -3022,6 +3971,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             MainAxisAlignment.spaceAround,
                                         children: [
                                           InkWell(
+                                            splashFactory:
+                                                NoSplash.splashFactory,
+                                            highlightColor: Colors.transparent,
                                             onTap: () {
                                               WidgetsBinding.instance
                                                   .addPostFrameCallback(
@@ -3058,10 +4010,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             ),
                                           ),
                                           InkWell(
+                                            splashFactory:
+                                                NoSplash.splashFactory,
+                                            highlightColor: Colors.transparent,
                                             onTap: () {
                                               WidgetsBinding.instance
                                                   .addPostFrameCallback((_) =>
-                                                      scrollAnimated(750));
+                                                      scrollAnimated(950));
                                               setState(() {
                                                 isHome = false;
                                                 isAbout = false;
@@ -3093,10 +4048,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             ),
                                           ),
                                           InkWell(
+                                            splashFactory:
+                                                NoSplash.splashFactory,
+                                            highlightColor: Colors.transparent,
                                             onTap: () {
                                               WidgetsBinding.instance
                                                   .addPostFrameCallback((_) =>
-                                                      scrollAnimated(1500));
+                                                      scrollAnimated(2000));
                                               setState(() {
                                                 isHome = false;
                                                 isAbout = false;
@@ -3128,10 +4086,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             ),
                                           ),
                                           InkWell(
+                                            splashFactory:
+                                                NoSplash.splashFactory,
+                                            highlightColor: Colors.transparent,
                                             onTap: () {
                                               WidgetsBinding.instance
                                                   .addPostFrameCallback((_) =>
-                                                      scrollAnimated(2200));
+                                                      scrollAnimated(2800));
                                               setState(() {
                                                 isHome = false;
                                                 isAbout = true;
@@ -3165,46 +4126,48 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         ],
                                       ),
                                     ),
-                                    AnimatedContainer(
-                                      duration: Duration(milliseconds: 450),
-                                      height: 50.0,
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                        border: Border.all(
+                                    InkWell(
+                                      splashFactory: NoSplash.splashFactory,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () {
+                                        WidgetsBinding.instance
+                                            .addPostFrameCallback(
+                                                (_) => scrollAnimated(3000));
+                                        setState(() {
+                                          isHome = false;
+                                          isAbout = false;
+                                          isService = false;
+                                          isWorks = false;
+                                          contactus = true;
+                                        });
+                                      },
+                                      onHover: (value) {
+                                        setState(() {
+                                          contactus = value;
+                                        });
+                                      },
+                                      child: AnimatedContainer(
+                                        duration: Duration(milliseconds: 450),
+                                        height: 50.0,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                          border: Border.all(
+                                            color: contactus
+                                                ? Color(0xFFF55353)
+                                                : Color(0xFFF55353),
+                                          ),
                                           color: contactus
                                               ? Color(0xFFF55353)
-                                              : Color(0xFFF55353),
+                                              : Color(0xFF10141C),
                                         ),
-                                        color: contactus
-                                            ? Color(0xFFF55353)
-                                            : Colors.transparent,
-                                      ),
-                                      child: Align(
-                                        alignment:
-                                            AlignmentDirectional(0.00, 0.00),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  15.0, 0.0, 15.0, 0.0),
-                                          child: InkWell(
-                                            onTap: () {
-                                              WidgetsBinding.instance
-                                                  .addPostFrameCallback((_) =>
-                                                      scrollAnimated(2500));
-                                              setState(() {
-                                                isHome = false;
-                                                isAbout = false;
-                                                isService = false;
-                                                isWorks = false;
-                                                contactus = true;
-                                              });
-                                            },
-                                            onHover: (value) {
-                                              setState(() {
-                                                contactus = value;
-                                              });
-                                            },
+                                        child: Align(
+                                          alignment:
+                                              AlignmentDirectional(0.00, 0.00),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    15.0, 0.0, 15.0, 0.0),
                                             child: Text(
                                               'Contact Us',
                                               style: FlutterFlowTheme.of(
@@ -3473,6 +4436,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                 .center,
                                                         children: [
                                                           InkWell(
+                                                            splashFactory: NoSplash
+                                                                .splashFactory,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
                                                             onTap: () {
                                                               WidgetsBinding
                                                                   .instance
@@ -4537,6 +5505,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 20.0, 0.0),
                                             child: InkWell(
+                                              splashFactory:
+                                                  NoSplash.splashFactory,
+                                              highlightColor:
+                                                  Colors.transparent,
                                               onTap: () {
                                                 setState(() {
                                                   mobileApp = !mobileApp;
@@ -4603,6 +5575,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 20.0, 0.0),
                                             child: InkWell(
+                                              splashFactory:
+                                                  NoSplash.splashFactory,
+                                              highlightColor:
+                                                  Colors.transparent,
                                               onTap: () {
                                                 setState(() {
                                                   website = !website;
@@ -4665,6 +5641,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             ),
                                           ),
                                           InkWell(
+                                            splashFactory:
+                                                NoSplash.splashFactory,
+                                            highlightColor: Colors.transparent,
                                             onTap: () {
                                               setState(() {
                                                 dataAnalysis = !dataAnalysis;
@@ -5051,6 +6030,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             InkWell(
+                                              splashFactory:
+                                                  NoSplash.splashFactory,
+                                              highlightColor:
+                                                  Colors.transparent,
                                               onTap: () {
                                                 if (Name.text.isEmpty ||
                                                     Email.text.isEmpty ||
@@ -5270,6 +6253,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                   width: 15,
                                                 ),
                                                 InkWell(
+                                                    splashFactory:
+                                                        NoSplash.splashFactory,
+                                                    highlightColor:
+                                                        Colors.transparent,
                                                     onTap: () {
                                                       launchUrl(
                                                           Uri.parse(
@@ -5313,6 +6300,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                   width: 15,
                                                 ),
                                                 InkWell(
+                                                    splashFactory:
+                                                        NoSplash.splashFactory,
+                                                    highlightColor:
+                                                        Colors.transparent,
                                                     onTap: () {
                                                       launchUrl(
                                                           Uri.parse(
@@ -5356,6 +6347,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                   width: 15,
                                                 ),
                                                 InkWell(
+                                                    splashFactory:
+                                                        NoSplash.splashFactory,
+                                                    highlightColor:
+                                                        Colors.transparent,
                                                     onTap: () {
                                                       launchUrl(
                                                           Uri.parse(
@@ -5407,6 +6402,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     InkWell(
+                                      splashFactory: NoSplash.splashFactory,
+                                      highlightColor: Colors.transparent,
                                       onTap: () {
                                         WidgetsBinding.instance
                                             .addPostFrameCallback(
@@ -5461,6 +6458,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       ),
                                     ),
                                     InkWell(
+                                      splashFactory: NoSplash.splashFactory,
+                                      highlightColor: Colors.transparent,
                                       onTap: () {
                                         WidgetsBinding.instance
                                             .addPostFrameCallback(
