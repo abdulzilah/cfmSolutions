@@ -7,6 +7,8 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import 'package:lottie/lottie.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -191,36 +193,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
     return GestureDetector(
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: Color(0xFF10141C),
         body: SafeArea(
           top: true,
           child: MediaQuery.of(context).size.width > 1000
               ? Stack(
                   children: [
-                    Stack(
-                      children: [
-                        Container(
-                          width: double.infinity,
-                          height: double.infinity,
-                          decoration: BoxDecoration(
-                            color: Color(0x00FFFFFF),
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: Image.asset(
-                                'assets/images/magicpattern-mesh-gradient-1696779600508.png',
-                              ).image,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: double.infinity,
-                          height: double.infinity,
-                          decoration: BoxDecoration(
-                            color: Color(0x30000000),
-                          ),
-                        ),
-                      ],
-                    ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(
                           20.0, 100.0, 20.0, 0.0),
@@ -238,396 +216,450 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 35.0, 0.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: Color(0x00FFFFFF),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        25.0, 60.0, 25.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
-                                      children: [
-                                        Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  0.5,
-                                          decoration: BoxDecoration(),
-                                          child: Stack(
-                                            children: [
-                                              Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 20.0),
-                                                    child: InkWell(
-                                                      onTap: () {
-                                                        // addRequest();
-                                                      },
-                                                      child: Text(
-                                                        'CODE FOR ME',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Readex Pro',
-                                                              color: Color(
-                                                                  0xC4FFFFFF),
-                                                              fontSize: 16.0,
-                                                              letterSpacing:
-                                                                  10.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
-                                                            ),
-                                                      ),
-                                                    ),
+                                    150, 100, 80, 0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.5,
+                                      decoration: BoxDecoration(),
+                                      child: Stack(
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 20, 0, 0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(0, 20, 0, 1),
+                                                  child: Text(
+                                                    'Your Vision',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'HANK',
+                                                          color:
+                                                              Color(0xDDFFFFFF),
+                                                          fontSize: 75,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          useGoogleFonts: false,
+                                                        ),
                                                   ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 20.0,
-                                                                0.0, 10.0),
-                                                    child: Text(
-                                                      'Your Vision',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'FIGTREE',
-                                                            fontSize: 75.0,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            useGoogleFonts:
-                                                                false,
+                                                ),
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0, 15, 20, 0),
+                                                      child: Container(
+                                                        width: 200,
+                                                        height: 20,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          gradient:
+                                                              LinearGradient(
+                                                            colors: [
+                                                              Color(0xFFF55353),
+                                                              Color(0xFFFEB139)
+                                                            ],
+                                                            stops: [0, 1],
+                                                            begin:
+                                                                AlignmentDirectional(
+                                                                    1, 0),
+                                                            end:
+                                                                AlignmentDirectional(
+                                                                    -1, 0),
                                                           ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 10.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Padding(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                        ),
+                                                        child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      1.0,
-                                                                      10.0,
-                                                                      10.0,
-                                                                      10.0),
-                                                          child: Text(
-                                                            'Our Code',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
+                                                                  .fromSTEB(2,
+                                                                      2, 2, 2),
+                                                          child: Container(
+                                                            width: 100,
+                                                            height: 100,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFF10141C),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          100),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  1, 10, 10, 5),
+                                                      child: Text(
+                                                        'Our Code',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'FIGTREE',
-                                                                  fontSize:
-                                                                      75.0,
+                                                                      'HANK',
+                                                                  color: Color(
+                                                                      0xDDFFFFFF),
+                                                                  fontSize: 75,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .bold,
                                                                   useGoogleFonts:
                                                                       false,
                                                                 ),
-                                                          ),
-                                                        ),
-                                                      ],
+                                                      ),
                                                     ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 20.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Text(
-                                                          'One',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'FIGTREE',
-                                                                fontSize: 75.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                useGoogleFonts:
-                                                                    false,
-                                                              ),
-                                                        ),
-                                                        GradientText(
-                                                          ' Solution',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'FIGTREE',
-                                                                fontSize: 75.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                useGoogleFonts:
-                                                                    false,
-                                                              ),
-                                                          colors: [
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .tertiary,
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .alternate
-                                                          ],
-                                                          gradientDirection:
-                                                              GradientDirection
-                                                                  .ltr,
-                                                          gradientType:
-                                                              GradientType
-                                                                  .linear,
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                  Stack(
+                                                  ],
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(0, 0, 0, 25),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
                                                     children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    45.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              elevation: 20.0,
-                                                              shape:
-                                                                  RoundedRectangleBorder(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            100.0),
-                                                              ),
-                                                              child: InkWell(
-                                                                onTap: () {},
-                                                                onHover:
-                                                                    (value) {
-                                                                  setState(() {
-                                                                    onHoverReachOut =
-                                                                        value;
-                                                                  });
-                                                                },
-                                                                child:
-                                                                    AnimatedContainer(
-                                                                  duration: Duration(
-                                                                      milliseconds:
-                                                                          500),
-                                                                  width:
-                                                                      onHoverReachOut
-                                                                          ? 250
-                                                                          : 220.0,
-                                                                  height: 55.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: onHoverReachOut
-                                                                        ? FlutterFlowTheme.of(context)
-                                                                            .alternate
-                                                                        : Color(
-                                                                            0xFF222643),
-                                                                    boxShadow: [
-                                                                      BoxShadow(
-                                                                        blurRadius:
-                                                                            4.0,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .alternate,
-                                                                        offset: Offset(
-                                                                            0.0,
-                                                                            0.0),
-                                                                        spreadRadius: onHoverReachOut
-                                                                            ? 0
-                                                                            : 3.0,
-                                                                      )
-                                                                    ],
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            100.0),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            1.0,
-                                                                            1.0,
-                                                                            1.0,
-                                                                            1.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .spaceEvenly,
-                                                                      children: [
-                                                                        Align(
-                                                                          alignment: AlignmentDirectional(
-                                                                              0.00,
-                                                                              0.00),
-                                                                          child:
-                                                                              Text(
-                                                                            'Reach Out',
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'FIGTREE',
-                                                                                  fontSize: 25.0,
-                                                                                  fontWeight: FontWeight.bold,
-                                                                                  useGoogleFonts: false,
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                        Icon(
-                                                                          Icons
-                                                                              .navigate_next,
-                                                                          color:
-                                                                              Colors.white,
-                                                                          size:
-                                                                              24.0,
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
+                                                      Text(
+                                                        'One',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'HANK',
+                                                                  color: Color(
+                                                                      0xDDFFFFFF),
+                                                                  fontSize: 75,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          15.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: InkWell(
-                                                                onTap: () {
-                                                                  WidgetsBinding
-                                                                      .instance
-                                                                      .addPostFrameCallback(
-                                                                          (_) =>
-                                                                              scrollAnimated(1500));
-                                                                },
-                                                                onHover:
-                                                                    (value) {
-                                                                  setState(() {
-                                                                    onHoverProjects =
-                                                                        value;
-                                                                  });
-                                                                },
-                                                                child:
-                                                                    AnimatedContainer(
-                                                                  duration: Duration(
-                                                                      milliseconds:
-                                                                          500),
-                                                                  width: 220.0,
-                                                                  height: 55.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                          borderRadius: BorderRadius.circular(
-                                                                              100.0),
-                                                                          border: Border
-                                                                              .all(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).alternate,
-                                                                          ),
-                                                                          color: onHoverProjects
-                                                                              ? FlutterFlowTheme.of(context).alternate
-                                                                              : Colors.transparent),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            10.0,
-                                                                            10.0,
-                                                                            10.0,
-                                                                            10.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .spaceEvenly,
-                                                                      children: [
-                                                                        Align(
-                                                                          alignment: AlignmentDirectional(
-                                                                              0.00,
-                                                                              0.00),
-                                                                          child:
-                                                                              Text(
-                                                                            'Projects',
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'FIGTREE',
-                                                                                  fontSize: 25.0,
-                                                                                  fontWeight: FontWeight.bold,
-                                                                                  useGoogleFonts: false,
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
+                                                      ),
+                                                      Stack(
+                                                        children: [
+                                                          GradientText(
+                                                            ' Solution',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'HANK',
+                                                                  fontSize: 75,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
-                                                              ),
-                                                            ),
+                                                            colors: [
+                                                              Color(0xFFF55353),
+                                                              Color(0xFFFEB139)
+                                                            ],
+                                                            gradientDirection:
+                                                                GradientDirection
+                                                                    .ltr,
+                                                            gradientType:
+                                                                GradientType
+                                                                    .linear,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            20, 0, 0, 0),
+                                        child: Container(
+                                          width: 100,
+                                          height: 450,
+                                          decoration: BoxDecoration(),
+                                          child: Stack(
+                                            children: [
+                                              Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Container(
+                                                        width: 400,
+                                                        height: 400,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              blurRadius: 5,
+                                                              color: Color(
+                                                                  0xFFF55353),
+                                                              offset:
+                                                                  Offset(0, 0),
+                                                              spreadRadius: 5,
+                                                            )
                                                           ],
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          image:
+                                                              DecorationImage(
+                                                            fit: BoxFit.cover,
+                                                            image:
+                                                                Image.network(
+                                                              'https://i.ibb.co/tz0RGJn/magicpattern-mesh-gradient-1698630025440.png',
+                                                            ).image,
+                                                          ),
+                                                          shape:
+                                                              BoxShape.circle,
+                                                        ),
+                                                        child: Container(
+                                                          width: 100,
+                                                          height: 100,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Color(
+                                                                0x2D000000),
+                                                            shape:
+                                                                BoxShape.circle,
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10,
+                                                                        10,
+                                                                        10,
+                                                                        10),
+                                                            child:
+                                                                Lottie.network(
+                                                              'https://lottie.host/1312ed64-42ee-4af0-baea-3f4975251010/yK9u7KsyNh.json',
+                                                              width: 100,
+                                                              height: 100,
+                                                              fit: BoxFit.cover,
+                                                              animate: true,
+                                                            ),
+                                                          ),
                                                         ),
                                                       ),
                                                     ],
                                                   ),
                                                 ],
-                                              ).animateOnPageLoad(animationsMap[
-                                                  'columnOnPageLoadAnimation']!),
+                                              ),
                                             ],
                                           ),
                                         ),
-                                      ],
+                                      ),
                                     ),
-                                  ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 70, 0, 0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Material(
+                                      color: Colors.transparent,
+                                      elevation: 20,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                      ),
+                                      child: InkWell(
+                                        onTap: () {},
+                                        onHover: (value) {
+                                          setState(() {
+                                            onHoverReachOut = value;
+                                          });
+                                        },
+                                        child: AnimatedContainer(
+                                          duration: Duration(milliseconds: 400),
+                                          width: onHoverReachOut ? 260 : 220,
+                                          height: 55,
+                                          decoration: BoxDecoration(
+                                            color: onHoverReachOut
+                                                ? Color(0xFFF55353)
+                                                : Color(0xFF10141C),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 4,
+                                                color: Color(0xFFF55353),
+                                                offset: Offset(0, 0),
+                                                spreadRadius: 3,
+                                              )
+                                            ],
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    1, 1, 1, 1),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.00, 0.00),
+                                                  child: Text(
+                                                    'Reach Out',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'HANK',
+                                                          color: !onHoverReachOut
+                                                              ? Color(
+                                                                  0xDDFFFFFF)
+                                                              : Color(
+                                                                  0xFF10141C),
+                                                          fontSize: 25,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          useGoogleFonts: false,
+                                                        ),
+                                                  ),
+                                                ),
+                                                Icon(
+                                                  Icons.navigate_next,
+                                                  color: Colors.white,
+                                                  size: 24,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 80,
+                                      height: 100,
+                                      decoration: BoxDecoration(),
+                                    ),
+                                    Material(
+                                      color: Colors.transparent,
+                                      elevation: 20,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                      ),
+                                      child: InkWell(
+                                        onTap: () {},
+                                        onHover: (value) {
+                                          setState(() {
+                                            onHoverProjects = value;
+                                          });
+                                        },
+                                        child: AnimatedContainer(
+                                          duration: Duration(milliseconds: 400),
+                                          width: onHoverProjects ? 260 : 220,
+                                          height: 55,
+                                          decoration: BoxDecoration(
+                                            color: onHoverProjects
+                                                ? Color(0xFFFEB139)
+                                                : Color(0xFF10141C),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 4,
+                                                color: Color(0xFFFEB139),
+                                                offset: Offset(0, 0),
+                                                spreadRadius: 3,
+                                              )
+                                            ],
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    1, 1, 1, 1),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.00, 0.00),
+                                                  child: Text(
+                                                    'Projects',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'HANK',
+                                                          color: !onHoverProjects
+                                                              ? Color(
+                                                                  0xDDFFFFFF)
+                                                              : Color(
+                                                                  0xFF10141C),
+                                                          fontSize: 25,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          useGoogleFonts: false,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                               Padding(
@@ -2931,278 +2963,293 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         ),
                       ),
                     ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10.0),
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(
-                          sigmaX: 0.0,
-                          sigmaY: 0.0,
-                        ),
-                        child: Container(
-                          width: double.infinity,
-                          height: 85.0,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Padding(
+                    Container(
+                      width: double.infinity,
+                      height: 100.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Column(
+                        children: [
+                          Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                25.0, 0.0, 25.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                40.0, 25.0, 40.0, 0.0),
+                            child: Column(
                               children: [
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Material(
-                                      color: Colors.transparent,
-                                      elevation: 10.0,
-                                      shape: const CircleBorder(),
-                                      child: Container(
-                                        width: 45.0,
-                                        height: 45.0,
-                                        decoration: BoxDecoration(
-                                          gradient: LinearGradient(
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 0, 0, 3),
+                                          child: GradientText(
+                                            'Catalyst',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'HANK',
+                                                  fontSize: 45,
+                                                  fontWeight: FontWeight.w900,
+                                                  useGoogleFonts: false,
+                                                ),
                                             colors: [
-                                              Color(0xFF8674D8),
-                                              FlutterFlowTheme.of(context)
-                                                  .alternate
+                                              Color(0xFFF55353),
+                                              Color(0xFFFEB139)
                                             ],
-                                            stops: [0.0, 1.0],
-                                            begin:
-                                                AlignmentDirectional(1.0, 0.0),
-                                            end: AlignmentDirectional(-1.0, 0),
+                                            gradientDirection:
+                                                GradientDirection.ltr,
+                                            gradientType: GradientType.linear,
                                           ),
-                                          shape: BoxShape.circle,
                                         ),
+                                      ],
+                                    ),
+                                    Container(
+                                      width: 450.0,
+                                      height: 50.0,
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(100.0),
+                                      ),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        children: [
+                                          InkWell(
+                                            onTap: () {
+                                              WidgetsBinding.instance
+                                                  .addPostFrameCallback(
+                                                      (_) => scrollAnimated(0));
+
+                                              setState(() {
+                                                isHome = true;
+                                                isAbout = false;
+                                                isService = false;
+                                                isWorks = false;
+                                                contactus = false;
+                                              });
+                                            },
+                                            child: Text(
+                                              'Home',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'HANK',
+                                                    color: !isHome
+                                                        ? FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryText
+                                                        : FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    fontWeight: !isHome
+                                                        ? FontWeight.w500
+                                                        : FontWeight.w700,
+                                                    fontSize: 20,
+                                                    useGoogleFonts: false,
+                                                  ),
+                                            ),
+                                          ),
+                                          InkWell(
+                                            onTap: () {
+                                              WidgetsBinding.instance
+                                                  .addPostFrameCallback((_) =>
+                                                      scrollAnimated(750));
+                                              setState(() {
+                                                isHome = false;
+                                                isAbout = false;
+                                                isService = true;
+                                                isWorks = false;
+                                                contactus = false;
+                                              });
+                                            },
+                                            child: Text(
+                                              'Services',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'HANK',
+                                                    useGoogleFonts: false,
+                                                    fontSize: 20.0,
+                                                    color: !isService
+                                                        ? FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryText
+                                                        : FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    fontWeight: !isService
+                                                        ? FontWeight.w500
+                                                        : FontWeight.w700,
+                                                  ),
+                                            ),
+                                          ),
+                                          InkWell(
+                                            onTap: () {
+                                              WidgetsBinding.instance
+                                                  .addPostFrameCallback((_) =>
+                                                      scrollAnimated(1500));
+                                              setState(() {
+                                                isHome = false;
+                                                isAbout = false;
+                                                isService = false;
+                                                isWorks = true;
+                                                contactus = false;
+                                              });
+                                            },
+                                            child: Text(
+                                              'Works',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'HANK',
+                                                    useGoogleFonts: false,
+                                                    fontSize: 20.0,
+                                                    color: !isWorks
+                                                        ? FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryText
+                                                        : FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    fontWeight: !isWorks
+                                                        ? FontWeight.w500
+                                                        : FontWeight.w700,
+                                                  ),
+                                            ),
+                                          ),
+                                          InkWell(
+                                            onTap: () {
+                                              WidgetsBinding.instance
+                                                  .addPostFrameCallback((_) =>
+                                                      scrollAnimated(2200));
+                                              setState(() {
+                                                isHome = false;
+                                                isAbout = true;
+                                                isService = false;
+                                                isWorks = false;
+                                                contactus = false;
+                                              });
+                                            },
+                                            child: Text(
+                                              'About us',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'HANK',
+                                                    useGoogleFonts: false,
+                                                    fontSize: 20.0,
+                                                    color: !isAbout
+                                                        ? FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryText
+                                                        : FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    fontWeight: !isAbout
+                                                        ? FontWeight.w500
+                                                        : FontWeight.w700,
+                                                  ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 0.0, 3.0),
-                                      child: Text(
-                                        'CFM',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'FIGTREE',
-                                              fontSize: 32.0,
-                                              fontWeight: FontWeight.bold,
-                                              useGoogleFonts: false,
+                                    AnimatedContainer(
+                                      duration: Duration(milliseconds: 450),
+                                      height: 50.0,
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                        border: Border.all(
+                                          color: contactus
+                                              ? Color(0xFFF55353)
+                                              : Color(0xFFF55353),
+                                        ),
+                                        color: contactus
+                                            ? Color(0xFFF55353)
+                                            : Colors.transparent,
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(0.00, 0.00),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  15.0, 0.0, 15.0, 0.0),
+                                          child: InkWell(
+                                            onTap: () {
+                                              WidgetsBinding.instance
+                                                  .addPostFrameCallback((_) =>
+                                                      scrollAnimated(2500));
+                                              setState(() {
+                                                isHome = false;
+                                                isAbout = false;
+                                                isService = false;
+                                                isWorks = false;
+                                                contactus = true;
+                                              });
+                                            },
+                                            onHover: (value) {
+                                              setState(() {
+                                                contactus = value;
+                                              });
+                                            },
+                                            child: Text(
+                                              'Contact Us',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'HANK',
+                                                    useGoogleFonts: false,
+                                                    color: contactus
+                                                        ? Color(0xFF10141C)
+                                                        : Color.fromARGB(
+                                                            255, 255, 255, 255),
+                                                    fontSize: 20.0,
+                                                    fontWeight: FontWeight.w700,
+                                                  ),
                                             ),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ],
-                                ).animateOnPageLoad(
-                                    animationsMap['rowOnPageLoadAnimation1']!),
-                                Container(
-                                  width: 450.0,
-                                  height: 50.0,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(100.0),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      InkWell(
-                                        onTap: () {
-                                          WidgetsBinding.instance
-                                              .addPostFrameCallback(
-                                                  (_) => scrollAnimated(0));
-
-                                          setState(() {
-                                            isHome = true;
-                                            isAbout = false;
-                                            isService = false;
-                                            isWorks = false;
-                                            contactus = false;
-                                          });
-                                        },
-                                        child: Text(
-                                          'Home',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                fontSize: 18.0,
-                                                color: !isHome
-                                                    ? FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText
-                                                    : FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                fontWeight: !isHome
-                                                    ? FontWeight.w300
-                                                    : FontWeight.w500,
-                                              ),
-                                        ),
-                                      ),
-                                      InkWell(
-                                        onTap: () {
-                                          WidgetsBinding.instance
-                                              .addPostFrameCallback(
-                                                  (_) => scrollAnimated(750));
-                                          setState(() {
-                                            isHome = false;
-                                            isAbout = false;
-                                            isService = true;
-                                            isWorks = false;
-                                            contactus = false;
-                                          });
-                                        },
-                                        child: Text(
-                                          'Services',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                fontSize: 18.0,
-                                                color: !isService
-                                                    ? FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText
-                                                    : FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                fontWeight: !isService
-                                                    ? FontWeight.w300
-                                                    : FontWeight.w500,
-                                              ),
-                                        ),
-                                      ),
-                                      InkWell(
-                                        onTap: () {
-                                          WidgetsBinding.instance
-                                              .addPostFrameCallback(
-                                                  (_) => scrollAnimated(1500));
-                                          setState(() {
-                                            isHome = false;
-                                            isAbout = false;
-                                            isService = false;
-                                            isWorks = true;
-                                            contactus = false;
-                                          });
-                                        },
-                                        child: Text(
-                                          'Works',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                fontSize: 18.0,
-                                                color: !isWorks
-                                                    ? FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText
-                                                    : FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                fontWeight: !isWorks
-                                                    ? FontWeight.w300
-                                                    : FontWeight.w500,
-                                              ),
-                                        ),
-                                      ),
-                                      InkWell(
-                                        onTap: () {
-                                          WidgetsBinding.instance
-                                              .addPostFrameCallback(
-                                                  (_) => scrollAnimated(2200));
-                                          setState(() {
-                                            isHome = false;
-                                            isAbout = true;
-                                            isService = false;
-                                            isWorks = false;
-                                            contactus = false;
-                                          });
-                                        },
-                                        child: Text(
-                                          'About us',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                fontSize: 18.0,
-                                                color: !isAbout
-                                                    ? FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText
-                                                    : FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                fontWeight: !isAbout
-                                                    ? FontWeight.w300
-                                                    : FontWeight.w500,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ).animateOnPageLoad(animationsMap[
-                                      'rowOnPageLoadAnimation2']!),
+                                ),
+                                SizedBox(
+                                  height: 17.5,
                                 ),
                                 Container(
-                                  height: 50.0,
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 0.5,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    border: Border.all(
-                                      color: contactus
-                                          ? FlutterFlowTheme.of(context)
-                                              .alternate
-                                          : Color(0xB1F1F4F8),
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        Color.fromARGB(169, 245, 83, 83),
+                                        Color.fromARGB(178, 254, 178, 57)
+                                      ],
+                                      stops: [0, 1],
+                                      begin: AlignmentDirectional(1, 0),
+                                      end: AlignmentDirectional(-1, 0),
                                     ),
-                                    color: contactus
-                                        ? FlutterFlowTheme.of(context).alternate
-                                        : Colors.transparent,
+                                    borderRadius: BorderRadius.circular(100),
                                   ),
-                                  child: Align(
-                                    alignment: AlignmentDirectional(0.00, 0.00),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          15.0, 0.0, 15.0, 0.0),
-                                      child: InkWell(
-                                        onTap: () {
-                                          WidgetsBinding.instance
-                                              .addPostFrameCallback(
-                                                  (_) => scrollAnimated(2500));
-                                          setState(() {
-                                            isHome = false;
-                                            isAbout = false;
-                                            isService = false;
-                                            isWorks = false;
-                                            contactus = true;
-                                          });
-                                        },
-                                        onHover: (value) {
-                                          setState(() {
-                                            contactus = value;
-                                          });
-                                        },
-                                        child: Text(
-                                          'Contact Us',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'FIGTREE',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                fontSize: 20.0,
-                                                fontWeight: FontWeight.w300,
-                                                useGoogleFonts: false,
-                                              ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ).animateOnPageLoad(animationsMap[
-                                    'containerOnPageLoadAnimation4']!),
+                                )
                               ],
                             ),
                           ),
-                        ),
+                        ],
                       ),
                     ),
                   ],
