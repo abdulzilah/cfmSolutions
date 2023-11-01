@@ -19,7 +19,7 @@
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Code For Me">
+  <meta name="apple-mobile-web-app-title" content="Catalyst Solutions">
 
   
 
@@ -29,13 +29,13 @@
   <link rel="icon" type="image/png" href="fav2.png" />
 
   <!-- Open Graph & SEO tags -->
-  <meta property="og:title" content="Code For Me" />
+  <meta property="og:title" content="Catalyst Solutions" />
   <meta property="og:description" content="Software Solutions Startup." />
-  <meta name="twitter:title" content="Code For Me" />
+  <meta name="twitter:title" content="Catalyst Solutions" />
   <meta name="twitter:description" content="Software Solutions Startup" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <title> Code For Me </title>
+  <title> Catalyst Solutions </title>
   <meta name="description" content="Software Solutions Startup" />
     
 
@@ -53,7 +53,28 @@
 </head>
 <body>
   <script>
-    
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAWho70Q73dW8e9zhlKH9f1N7XF1-VwF_k",
+  authDomain: "cfm-solutions.firebaseapp.com",
+  databaseURL: "https://cfm-solutions-default-rtdb.firebaseio.com",
+  projectId: "cfm-solutions",
+  storageBucket: "cfm-solutions.appspot.com",
+  messagingSenderId: "236349787987",
+  appId: "1:236349787987:web:391416c051d1c4f02e9ba6",
+  measurementId: "G-6K24PSPN8R"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
     window.addEventListener('load', function (ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({

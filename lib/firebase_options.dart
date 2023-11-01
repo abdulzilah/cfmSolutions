@@ -61,5 +61,7 @@ class DefaultFirebaseOptions {
     databaseURL: 'https://cfm-solutions-default-rtdb.firebaseio.com',
     storageBucket: 'cfm-solutions.appspot.com',
     measurementId: 'G-6K24PSPN8R',
+
+    
   );
 }
